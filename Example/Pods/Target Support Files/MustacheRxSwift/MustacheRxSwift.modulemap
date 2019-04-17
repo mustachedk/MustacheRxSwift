@@ -1,0 +1,6 @@
+framework module MustacheRxSwift {
+  umbrella header "MustacheRxSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

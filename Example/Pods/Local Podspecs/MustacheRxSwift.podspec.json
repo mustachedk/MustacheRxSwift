@@ -1,0 +1,39 @@
+{
+  "name": "MustacheRxSwift",
+  "version": "0.1.0",
+  "summary": "Helper methods used at Mustache when creating new apps.",
+  "homepage": "https://github.com/mustachedk/MustacheRxSwift",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Tommy Sadiq Hinrichsen": "th@mustache.dk"
+  },
+  "source": {
+    "git": "https://github.com/mustachedk/MustacheRxSwift",
+    "tag": "0.1.0"
+  },
+  "swift_version": "5.0",
+  "platforms": {
+    "ios": "11.0"
+  },
+  "source_files": [
+    "MustacheUIKit/Classes/**/*",
+    "MustacheUIKit/Extensions/**/*"
+  ],
+  "frameworks": [
+    "UIKit",
+    "AVFoundation",
+    "CoreLocation",
+    "MapKit"
+  ],
+  "dependencies": {
+    "RxSwift": [
+
+    ],
+    "RxSwiftExt": [
+
+    ]
+  }
+}
