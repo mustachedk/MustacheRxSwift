@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
     s.ios.deployment_target = '11.0'
 
-    s.source_files = 'MustacheUIKit/Classes/**/*'
+    s.source_files = 'MustacheRxSwift/Classes/**/*'
 
     s.frameworks = 'UIKit', 'AVFoundation', 'CoreLocation', 'MapKit'
 

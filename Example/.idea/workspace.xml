@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f80299e-b05f-4680-be8d-a2513d263761" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MustacheRxSwift.xcodeproj/xcshareddata/xcschemes/MustacheRxSwift-Example.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/MustacheRxSwift.xcodeproj/xcshareddata/xcschemes/MustacheRxSwift-Example.xcscheme" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MustacheRxSwift.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/../MustacheRxSwift.podspec" afterDir="false" />
     </list>
     <ignored path="$USER_HOME$/Library/Caches/AppCode2019.1/DerivedData/MustacheRxSwift-aheimtippzbaunblrfpmnwzcoluv/Build/Intermediates.noindex/" />
@@ -40,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../MustacheRxSwift.podspec">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="85" selection-start-line="7" selection-start-column="85" selection-end-line="7" selection-end-column="85" />
+            <state relative-caret-position="204">
+              <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -238,12 +236,12 @@
       <updated>1555492958383</updated>
       <workItem from="1555492960257" duration="92000" />
       <workItem from="1555493059728" duration="1178000" />
-      <workItem from="1555494275364" duration="20000" />
+      <workItem from="1555494275364" duration="104000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1290000" />
+    <option name="totallyTimeSpent" value="1374000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1363" extended-state="0" />
@@ -383,8 +381,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../MustacheRxSwift.podspec">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="85" selection-start-line="7" selection-start-column="85" selection-end-line="7" selection-end-column="85" />
+        <state relative-caret-position="204">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
         </state>
       </provider>
     </entry>
