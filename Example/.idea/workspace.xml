@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f80299e-b05f-4680-be8d-a2513d263761" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Classes/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Classes/CLGeocoder+Rx.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Classes/CLLocationManager+Rx.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Classes/MKLocalSearch+Rx.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Classes/MKLocalSearchCompleter+Rx.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Classes/MKMapView+Rx.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Classes/ObservableType+Extensions.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Classes/ReplaceMe.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Classes/RxCLLocationManagerDelegateProxy.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Classes/RxCaptureMetadataOutputObjectsDelegateProxy.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Classes/RxMKLocalSearchCompleterDelegateProxy.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Classes/RxMKMapViewDelegateProxy.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Classes/RxUtil.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Classes/UIApplication+Rx.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Classes/UIPickerView+Rx.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Classes/URLSession+Rx.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MustacheRxSwift.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/MustacheRxSwift.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MustacheRxSwift.xcodeproj/xcshareddata/xcschemes/MustacheRxSwift-Example.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/MustacheRxSwift.xcodeproj/xcshareddata/xcschemes/MustacheRxSwift-Example.xcscheme" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MustacheRxSwift.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/../MustacheRxSwift.podspec" afterDir="false" />
     </list>
     <ignored path="$USER_HOME$/Library/Caches/AppCode2019.1/DerivedData/MustacheRxSwift-aheimtippzbaunblrfpmnwzcoluv/Build/Intermediates.noindex/" />
@@ -31,19 +15,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_7972378e6e21b0b39d29a81e611427d1d2737899" />
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Classes/CLGeocoder+Rx.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="50" column="55" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
-              <folding>
-                <element signature="e#129#143#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Classes/CLLocationManager+Rx.swift">
           <provider selected="true" editor-type-id="text-editor">
@@ -52,6 +24,24 @@
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Classes/RxCLLocationManagerDelegateProxy.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../MustacheRxSwift.podspec">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="85" selection-start-line="7" selection-start-column="85" selection-end-line="7" selection-end-column="85" />
             </state>
           </provider>
         </entry>
@@ -70,51 +60,30 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Classes/MKMapView+Rx.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3196">
-              <folding>
-                <element signature="e#152#165#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Classes/RxMKLocalSearchCompleterDelegateProxy.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#164#183#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Classes/RxMKMapViewDelegateProxy.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="357">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Classes/UIApplication+Rx.swift">
+        <entry file="file://$PROJECT_DIR$/../Classes/RxCaptureMetadataOutputObjectsDelegateProxy.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Classes/UIPickerView+Rx.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+            <state relative-caret-position="255">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding>
-                <element signature="e#1#13#0" expanded="true" />
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -163,6 +132,7 @@
         <option value="$PROJECT_DIR$/../Classes/MKMapView+Rx.swift" />
         <option value="$PROJECT_DIR$/../Classes/RxMKLocalSearchCompleterDelegateProxy.swift" />
         <option value="$PROJECT_DIR$/../Classes/RxMKMapViewDelegateProxy.swift" />
+        <option value="$PROJECT_DIR$/../MustacheRxSwift.podspec" />
       </list>
     </option>
   </component>
@@ -188,7 +158,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -198,6 +168,11 @@
             </path>
             <path>
               <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="MustacheRxSwift" type="1d218c8b:XcodeProjectNode" />
+              <item name="Podspec Metadata" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
               <item name="Pods" type="1d218c8b:XcodeProjectNode" />
             </path>
             <path>
@@ -217,30 +192,6 @@
               <item name="Development Pods" type="fcab9f18:XcodeViewNode" />
               <item name="MustacheRxSwift" type="fcab9f18:XcodeViewNode" />
               <item name="Classes" type="fcab9f18:XcodeViewNode" />
-            </path>
-            <path>
-              <item name="" type="efc3779f:XcodeRootNode" />
-              <item name="Pods" type="1d218c8b:XcodeProjectNode" />
-              <item name="Development Pods" type="fcab9f18:XcodeViewNode" />
-              <item name="MustacheRxSwift" type="fcab9f18:XcodeViewNode" />
-              <item name="Classes" type="fcab9f18:XcodeViewNode" />
-              <item name="CoreLocation" type="fcab9f18:XcodeViewNode" />
-            </path>
-            <path>
-              <item name="" type="efc3779f:XcodeRootNode" />
-              <item name="Pods" type="1d218c8b:XcodeProjectNode" />
-              <item name="Development Pods" type="fcab9f18:XcodeViewNode" />
-              <item name="MustacheRxSwift" type="fcab9f18:XcodeViewNode" />
-              <item name="Classes" type="fcab9f18:XcodeViewNode" />
-              <item name="Foundation" type="fcab9f18:XcodeViewNode" />
-            </path>
-            <path>
-              <item name="" type="efc3779f:XcodeRootNode" />
-              <item name="Pods" type="1d218c8b:XcodeProjectNode" />
-              <item name="Development Pods" type="fcab9f18:XcodeViewNode" />
-              <item name="MustacheRxSwift" type="fcab9f18:XcodeViewNode" />
-              <item name="Classes" type="fcab9f18:XcodeViewNode" />
-              <item name="MapKit" type="fcab9f18:XcodeViewNode" />
             </path>
             <path>
               <item name="" type="efc3779f:XcodeRootNode" />
@@ -251,11 +202,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Cidr.FilesView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="OBJC.PRESERVED_TARGET_SELECTION" value="Pods-MustacheRxSwift_Example" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/MustacheRxSwift.xcworkspace" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -285,18 +237,19 @@
       <option name="presentableId" value="Default" />
       <updated>1555492958383</updated>
       <workItem from="1555492960257" duration="92000" />
-      <workItem from="1555493059728" duration="880000" />
+      <workItem from="1555493059728" duration="1178000" />
+      <workItem from="1555494275364" duration="20000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="972000" />
+    <option name="totallyTimeSpent" value="1290000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2560" height="1363" extended-state="6" />
+    <frame x="0" y="23" width="2560" height="1363" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18759936" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1891892" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -323,26 +276,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../Classes/RxCaptureMetadataOutputObjectsDelegateProxy.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1411">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Classes/RxCLLocationManagerDelegateProxy.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding>
-            <element signature="e#164#183#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Classes/ObservableType+Extensions.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -374,30 +307,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Classes/MKLocalSearch+Rx.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Classes/MKLocalSearchCompleter+Rx.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#1#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Classes/CLGeocoder+Rx.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
+        <state relative-caret-position="816">
           <caret line="50" column="55" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
-          <folding>
-            <element signature="e#129#143#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -422,27 +335,56 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../Classes/MKMapView+Rx.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3196">
-          <folding>
-            <element signature="e#152#165#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../Classes/RxMKLocalSearchCompleterDelegateProxy.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#164#183#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../Classes/RxMKMapViewDelegateProxy.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="357">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Classes/RxCaptureMetadataOutputObjectsDelegateProxy.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Classes/MKLocalSearch+Rx.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Classes/MKLocalSearchCompleter+Rx.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#1#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Classes/RxCLLocationManagerDelegateProxy.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../MustacheRxSwift.podspec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="85" selection-start-line="7" selection-start-column="85" selection-end-line="7" selection-end-column="85" />
         </state>
       </provider>
     </entry>
