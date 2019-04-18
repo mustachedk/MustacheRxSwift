@@ -1,3 +1,5 @@
+source 'https://github.com/mustachedkdev/MustachePodSpec.git'
+source 'https://github.com/cocoapods/specs.git'
 
 platform :ios, '11.0'
 
@@ -9,6 +11,6 @@ target 'MustacheRxSwift_Example' do
   target 'MustacheRxSwift_Tests' do
     inherit! :search_paths
 
-    
+
   end
 end

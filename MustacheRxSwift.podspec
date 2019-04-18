@@ -16,5 +16,6 @@ Pod::Spec.new do |s|
 
     s.dependency 'RxSwift'
     s.dependency 'RxSwiftExt'
+    s.dependency 'MustacheServices' 
 
 end

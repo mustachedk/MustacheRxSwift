@@ -313,6 +313,10 @@
 		ECAF3F6A117E602AC8CE632625E2CE57 /* RxCocoa-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B9C792881731FD8D3E96D737E3978849 /* RxCocoa-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EEB04660D13F5CC6C617D616D38FA81C /* ignore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9C33538B5CB56D7C63B5329830A23 /* ignore.swift */; };
 		F0CE8B8976C5F1F2012D443B3B08D018 /* UITabBarItem+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA82E7ED850ABD3A35A3449848CB309 /* UITabBarItem+Rx.swift */; };
+		F0E9386D2268EE0200E235D0 /* RxGeoLocationServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E9386C2268EE0200E235D0 /* RxGeoLocationServiceType.swift */; };
+		F0E9386F2268EECD00E235D0 /* RxNotificationServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E9386E2268EECD00E235D0 /* RxNotificationServiceType.swift */; };
+		F0E938712268EF9C00E235D0 /* NetworkServiceType+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E938702268EF9C00E235D0 /* NetworkServiceType+Rx.swift */; };
+		F0E938742268F27A00E235D0 /* DawaViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E938732268F27A00E235D0 /* DawaViewModelType.swift */; };
 		F1F90C64DB5C0E4A3BD541E137718D21 /* RxTableViewReactiveArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D584FB993F9262F9D85B9F0C1BBCE58F /* RxTableViewReactiveArrayDataSource.swift */; };
 		F2BA8B9D1C8C348232AD29209F603F12 /* SwitchIfEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649E8F22C25A97162264E37CD191CE81 /* SwitchIfEmpty.swift */; };
 		F30F3A176D05AA3FB583885A92D3D876 /* BehaviorRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86771EBB3E9287DF749DD6C2D84A33C5 /* BehaviorRelay.swift */; };
@@ -773,6 +777,10 @@
 		F0E938682268E5B400E235D0 /* ObservableType+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extensions.swift"; sourceTree = "<group>"; };
 		F0E938692268E5BD00E235D0 /* UIPickerView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPickerView+Rx.swift"; sourceTree = "<group>"; };
 		F0E9386A2268E5BD00E235D0 /* UIApplication+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Rx.swift"; sourceTree = "<group>"; };
+		F0E9386C2268EE0200E235D0 /* RxGeoLocationServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxGeoLocationServiceType.swift; sourceTree = "<group>"; };
+		F0E9386E2268EECD00E235D0 /* RxNotificationServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNotificationServiceType.swift; sourceTree = "<group>"; };
+		F0E938702268EF9C00E235D0 /* NetworkServiceType+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkServiceType+Rx.swift"; sourceTree = "<group>"; };
+		F0E938732268F27A00E235D0 /* DawaViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DawaViewModelType.swift; sourceTree = "<group>"; };
 		F0FEFB97F2D1229056998E11742877A8 /* RxCocoa-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxCocoa-dummy.m"; sourceTree = "<group>"; };
 		F175B96C3FCE0E1532E5812D5CF19BC8 /* Logging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logging.swift; path = RxCocoa/Foundation/Logging.swift; sourceTree = "<group>"; };
 		F17AEB160CF7704EDFC473D625D0120B /* _RXDelegateProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _RXDelegateProxy.h; path = RxCocoa/Runtime/include/_RXDelegateProxy.h; sourceTree = "<group>"; };
@@ -1354,6 +1362,7 @@
 		F0E938562268E57E00E235D0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F0E9386B2268EDCA00E235D0 /* MustacheServices */,
 				F0E9385B2268E58800E235D0 /* AVFoundation */,
 				F0E9385A2268E58800E235D0 /* CoreLocation */,
 				F0E938572268E58800E235D0 /* Foundation */,
@@ -1418,6 +1427,17 @@
 				F0E938672268E5B300E235D0 /* RxUtil.swift */,
 			);
 			path = RxSwift;
+			sourceTree = "<group>";
+		};
+		F0E9386B2268EDCA00E235D0 /* MustacheServices */ = {
+			isa = PBXGroup;
+			children = (
+				F0E9386C2268EE0200E235D0 /* RxGeoLocationServiceType.swift */,
+				F0E9386E2268EECD00E235D0 /* RxNotificationServiceType.swift */,
+				F0E938702268EF9C00E235D0 /* NetworkServiceType+Rx.swift */,
+				F0E938732268F27A00E235D0 /* DawaViewModelType.swift */,
+			);
+			path = MustacheServices;
 			sourceTree = "<group>";
 		};
 		F42F34F3402A17258D361F396D82C430 /* Pods-MustacheRxSwift_Tests */ = {
@@ -1659,6 +1679,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					BC9386F55E676F0219224B6456C7B107 = {
+						LastSwiftMigration = 1020;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1899,6 +1924,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0E938712268EF9C00E235D0 /* NetworkServiceType+Rx.swift in Sources */,
+				F0E938742268F27A00E235D0 /* DawaViewModelType.swift in Sources */,
+				F0E9386D2268EE0200E235D0 /* RxGeoLocationServiceType.swift in Sources */,
+				F0E9386F2268EECD00E235D0 /* RxNotificationServiceType.swift in Sources */,
 				31597B901D0D785117E0CAE0BCCF79F6 /* MustacheRxSwift-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2186,6 +2215,7 @@
 			baseConfigurationReference = 159F2F1236DA4DA5A64E5FEFE69A72A8 /* MustacheRxSwift.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2207,6 +2237,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2614,6 +2645,7 @@
 			baseConfigurationReference = 159F2F1236DA4DA5A64E5FEFE69A72A8 /* MustacheRxSwift.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
