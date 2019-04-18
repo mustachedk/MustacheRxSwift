@@ -13,8 +13,8 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		AE7346221CE0CF3A87D06329 /* Pods_MustacheRxSwift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F34DF99BAF5F9269A4D82CF /* Pods_MustacheRxSwift_Tests.framework */; };
-		F3E88288430B9BE5771EADEA /* Pods_MustacheRxSwift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0642FE3632B192A3D355F4BD /* Pods_MustacheRxSwift_Example.framework */; };
+		749DEEAD46F18B3FB337D4B8 /* Pods_MustacheRxSwift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2131122BE5FF86D0D602580 /* Pods_MustacheRxSwift_Example.framework */; };
+		94D50356A002298842116BC8 /* Pods_MustacheRxSwift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 421B1349D1994512E9F61419 /* Pods_MustacheRxSwift_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,12 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0642FE3632B192A3D355F4BD /* Pods_MustacheRxSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MustacheRxSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1EC8C9AD98272E4BBCDC3D26 /* Pods-MustacheRxSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MustacheRxSwift_Example.debug.xcconfig"; path = "Target Support Files/Pods-MustacheRxSwift_Example/Pods-MustacheRxSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		2C26A8F8FA5952F81ABE0C1F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		2C33AABE1945A218A1D33066 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		2F34DF99BAF5F9269A4D82CF /* Pods_MustacheRxSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MustacheRxSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3BD69E0F8039361C5D69EC0B /* Pods-MustacheRxSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MustacheRxSwift_Example.release.xcconfig"; path = "Target Support Files/Pods-MustacheRxSwift_Example/Pods-MustacheRxSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
+		421B1349D1994512E9F61419 /* Pods_MustacheRxSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MustacheRxSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		59D13A9371850395EAC74697 /* Pods-MustacheRxSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MustacheRxSwift_Tests.debug.xcconfig"; path = "Target Support Files/Pods-MustacheRxSwift_Tests/Pods-MustacheRxSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* MustacheRxSwift_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MustacheRxSwift_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,9 +40,13 @@
 		607FACE51AFB9204008FA782 /* MustacheRxSwift_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MustacheRxSwift_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		7544856BCE9CA8B58CB6F73C /* MustacheRxSwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MustacheRxSwift.podspec; path = ../MustacheRxSwift.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		8FC43E4D5405F7777737490B /* Pods-MustacheRxSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MustacheRxSwift_Tests.release.xcconfig"; path = "Target Support Files/Pods-MustacheRxSwift_Tests/Pods-MustacheRxSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		A7A09A6AE485A36ABF16D502 /* Pods-MustacheRxSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MustacheRxSwift_Tests.debug.xcconfig"; path = "Target Support Files/Pods-MustacheRxSwift_Tests/Pods-MustacheRxSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		7D44E225FC5BC662E24D308E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		9EC7046FD946FD33E670BB91 /* Pods-MustacheRxSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MustacheRxSwift_Tests.release.xcconfig"; path = "Target Support Files/Pods-MustacheRxSwift_Tests/Pods-MustacheRxSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		A2131122BE5FF86D0D602580 /* Pods_MustacheRxSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MustacheRxSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD59B3E462F7B7624BD2BA25 /* Pods-MustacheRxSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MustacheRxSwift_Example.debug.xcconfig"; path = "Target Support Files/Pods-MustacheRxSwift_Example/Pods-MustacheRxSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		D1E475D2AA5A4399124360A5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		D37D3EC76AE78156BF12192C /* Pods-MustacheRxSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MustacheRxSwift_Example.release.xcconfig"; path = "Target Support Files/Pods-MustacheRxSwift_Example/Pods-MustacheRxSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
+		D7E73A414D2BDA9F4D00F10D /* MustacheRxSwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = MustacheRxSwift.podspec; path = ../MustacheRxSwift.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3E88288430B9BE5771EADEA /* Pods_MustacheRxSwift_Example.framework in Frameworks */,
+				749DEEAD46F18B3FB337D4B8 /* Pods_MustacheRxSwift_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,22 +62,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE7346221CE0CF3A87D06329 /* Pods_MustacheRxSwift_Tests.framework in Frameworks */,
+				94D50356A002298842116BC8 /* Pods_MustacheRxSwift_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		180BBBAD49CD76645E10DAE8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0642FE3632B192A3D355F4BD /* Pods_MustacheRxSwift_Example.framework */,
-				2F34DF99BAF5F9269A4D82CF /* Pods_MustacheRxSwift_Tests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -85,8 +76,8 @@
 				607FACD21AFB9204008FA782 /* Example for MustacheRxSwift */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				6305A6DBB9B67CBA7B8530BF /* Pods */,
-				180BBBAD49CD76645E10DAE8 /* Frameworks */,
+				E62C744CB86765A23B9C7A82 /* Pods */,
+				634E6B1B976E306E195EF42A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,21 +132,31 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				7544856BCE9CA8B58CB6F73C /* MustacheRxSwift.podspec */,
-				2C26A8F8FA5952F81ABE0C1F /* README.md */,
-				2C33AABE1945A218A1D33066 /* LICENSE */,
+				D7E73A414D2BDA9F4D00F10D /* MustacheRxSwift.podspec */,
+				D1E475D2AA5A4399124360A5 /* README.md */,
+				7D44E225FC5BC662E24D308E /* LICENSE */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		6305A6DBB9B67CBA7B8530BF /* Pods */ = {
+		634E6B1B976E306E195EF42A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1EC8C9AD98272E4BBCDC3D26 /* Pods-MustacheRxSwift_Example.debug.xcconfig */,
-				3BD69E0F8039361C5D69EC0B /* Pods-MustacheRxSwift_Example.release.xcconfig */,
-				A7A09A6AE485A36ABF16D502 /* Pods-MustacheRxSwift_Tests.debug.xcconfig */,
-				8FC43E4D5405F7777737490B /* Pods-MustacheRxSwift_Tests.release.xcconfig */,
+				A2131122BE5FF86D0D602580 /* Pods_MustacheRxSwift_Example.framework */,
+				421B1349D1994512E9F61419 /* Pods_MustacheRxSwift_Tests.framework */,
 			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E62C744CB86765A23B9C7A82 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD59B3E462F7B7624BD2BA25 /* Pods-MustacheRxSwift_Example.debug.xcconfig */,
+				D37D3EC76AE78156BF12192C /* Pods-MustacheRxSwift_Example.release.xcconfig */,
+				59D13A9371850395EAC74697 /* Pods-MustacheRxSwift_Tests.debug.xcconfig */,
+				9EC7046FD946FD33E670BB91 /* Pods-MustacheRxSwift_Tests.release.xcconfig */,
+			);
+			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -166,11 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "MustacheRxSwift_Example" */;
 			buildPhases = (
-				DE3B8AD967AF62CA275FAD0F /* [CP] Check Pods Manifest.lock */,
+				D477F061D2FFEB4DC5FEE375 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				CB15C625F00456CF349E7539 /* [CP] Embed Pods Frameworks */,
+				416538E3D0EC60790CC99761 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,7 +186,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "MustacheRxSwift_Tests" */;
 			buildPhases = (
-				DF78E29202F8D784FB62BF20 /* [CP] Check Pods Manifest.lock */,
+				28D4275C2E961F7852D2C4D0 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
@@ -226,7 +227,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -262,7 +262,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		CB15C625F00456CF349E7539 /* [CP] Embed Pods Frameworks */ = {
+		28D4275C2E961F7852D2C4D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MustacheRxSwift_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		416538E3D0EC60790CC99761 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -290,7 +312,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MustacheRxSwift_Example/Pods-MustacheRxSwift_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DE3B8AD967AF62CA275FAD0F /* [CP] Check Pods Manifest.lock */ = {
+		D477F061D2FFEB4DC5FEE375 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -306,28 +328,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-MustacheRxSwift_Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DF78E29202F8D784FB62BF20 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MustacheRxSwift_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -485,7 +485,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1EC8C9AD98272E4BBCDC3D26 /* Pods-MustacheRxSwift_Example.debug.xcconfig */;
+			baseConfigurationReference = BD59B3E462F7B7624BD2BA25 /* Pods-MustacheRxSwift_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MustacheRxSwift/Info.plist;
@@ -500,7 +500,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3BD69E0F8039361C5D69EC0B /* Pods-MustacheRxSwift_Example.release.xcconfig */;
+			baseConfigurationReference = D37D3EC76AE78156BF12192C /* Pods-MustacheRxSwift_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MustacheRxSwift/Info.plist;
@@ -515,7 +515,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7A09A6AE485A36ABF16D502 /* Pods-MustacheRxSwift_Tests.debug.xcconfig */;
+			baseConfigurationReference = 59D13A9371850395EAC74697 /* Pods-MustacheRxSwift_Tests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -537,7 +537,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8FC43E4D5405F7777737490B /* Pods-MustacheRxSwift_Tests.release.xcconfig */;
+			baseConfigurationReference = 9EC7046FD946FD33E670BB91 /* Pods-MustacheRxSwift_Tests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
