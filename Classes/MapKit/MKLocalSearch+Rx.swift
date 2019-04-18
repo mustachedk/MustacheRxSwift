@@ -1,9 +1,9 @@
 import MapKit
 import RxSwift
 
-extension MKLocalSearch {
+public extension MKLocalSearch {
 
-    public func mapItems() -> Observable<[MKMapItem]> {
+    func mapItems() -> Observable<[MKMapItem]> {
         return Observable.create { observer in
             self.start(completionHandler: { (response, error) in
                 if let error = error {

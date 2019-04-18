@@ -10,13 +10,13 @@ public extension Reactive where Base: MKMapView {
 
      For more information take a look at `DelegateProxyType` protocol documentation.
      */
-    public var delegate: DelegateProxy<MKMapView, MKMapViewDelegate> {
+    var delegate: DelegateProxy<MKMapView, MKMapViewDelegate> {
         return RxMKMapViewDelegateProxy.proxy(for: base)
     }
 
     // MARK: Responding to Map Position Changes
 
-    public var regionWillChangeAnimated: ControlEvent<Bool> {
+    var regionWillChangeAnimated: ControlEvent<Bool> {
         let source = delegate
                 .methodInvoked(#selector(MKMapViewDelegate.mapView(_:regionWillChangeAnimated:)))
                 .map { a in
@@ -25,7 +25,7 @@ public extension Reactive where Base: MKMapView {
         return ControlEvent(events: source)
     }
 
-    public var regionDidChangeAnimated: ControlEvent<MKMapRect> {
+    var regionDidChangeAnimated: ControlEvent<MKMapRect> {
         let source = delegate.methodInvoked(#selector(MKMapViewDelegate.mapView(_:regionDidChangeAnimated:)))
                 .map { a -> MKMapRect in
                     let mapView = try castOrThrow(MKMapView.self, a[0])
@@ -36,7 +36,7 @@ public extension Reactive where Base: MKMapView {
 
     // MARK: Loading the Map Data
 
-    public var willStartLoadingMap: ControlEvent<Void> {
+    var willStartLoadingMap: ControlEvent<Void> {
         let source = delegate
                 .methodInvoked(#selector(MKMapViewDelegate.mapViewWillStartLoadingMap(_:)))
                 .map { _ in
@@ -45,7 +45,7 @@ public extension Reactive where Base: MKMapView {
         return ControlEvent(events: source)
     }
 
-    public var didFinishLoadingMap: ControlEvent<Void> {
+    var didFinishLoadingMap: ControlEvent<Void> {
         let source = delegate
                 .methodInvoked(#selector(MKMapViewDelegate.mapViewDidFinishLoadingMap(_:)))
                 .map { _ in
@@ -54,7 +54,7 @@ public extension Reactive where Base: MKMapView {
         return ControlEvent(events: source)
     }
 
-    public var didFailLoadingMap: Observable<NSError> {
+    var didFailLoadingMap: Observable<NSError> {
         return delegate
                 .methodInvoked(#selector(MKMapViewDelegate.mapViewDidFailLoadingMap(_:withError:)))
                 .map { a in
@@ -64,7 +64,7 @@ public extension Reactive where Base: MKMapView {
 
     // MARK: Responding to Rendering Events
 
-    public var willStartRenderingMap: ControlEvent<Void> {
+    var willStartRenderingMap: ControlEvent<Void> {
         let source = delegate
                 .methodInvoked(#selector(MKMapViewDelegate.mapViewWillStartRenderingMap(_:)))
                 .map { _ in
@@ -73,7 +73,7 @@ public extension Reactive where Base: MKMapView {
         return ControlEvent(events: source)
     }
 
-    public var didFinishRenderingMap: ControlEvent<Bool> {
+    var didFinishRenderingMap: ControlEvent<Bool> {
         let source = delegate
                 .methodInvoked(#selector(MKMapViewDelegate.mapViewDidFinishRenderingMap(_:fullyRendered:)))
                 .map { a in
@@ -84,7 +84,7 @@ public extension Reactive where Base: MKMapView {
 
     // MARK: Tracking the User Location
 
-    public var willStartLocatingUser: ControlEvent<Void> {
+    var willStartLocatingUser: ControlEvent<Void> {
         let source = delegate
                 .methodInvoked(#selector(MKMapViewDelegate.mapViewWillStartLocatingUser(_:)))
                 .map { _ in
@@ -93,7 +93,7 @@ public extension Reactive where Base: MKMapView {
         return ControlEvent(events: source)
     }
 
-    public var didStopLocatingUser: ControlEvent<Void> {
+    var didStopLocatingUser: ControlEvent<Void> {
         let source = delegate
                 .methodInvoked(#selector(MKMapViewDelegate.mapViewDidStopLocatingUser(_:)))
                 .map { _ in
@@ -102,7 +102,7 @@ public extension Reactive where Base: MKMapView {
         return ControlEvent(events: source)
     }
 
-    public var didUpdateUserLocation: ControlEvent<MKUserLocation> {
+    var didUpdateUserLocation: ControlEvent<MKUserLocation> {
         let source = delegate
                 .methodInvoked(#selector(MKMapViewDelegate.mapView(_:didUpdate:)))
                 .map { a in
@@ -111,7 +111,7 @@ public extension Reactive where Base: MKMapView {
         return ControlEvent(events: source)
     }
 
-    public var didFailToLocateUserWithError: Observable<NSError> {
+    var didFailToLocateUserWithError: Observable<NSError> {
         return delegate
                 .methodInvoked(#selector(MKMapViewDelegate.mapView(_:didFailToLocateUserWithError:)))
                 .map { a in
@@ -119,7 +119,7 @@ public extension Reactive where Base: MKMapView {
                 }
     }
 
-    public var didChangeUserTrackingMode: ControlEvent<(mode: MKUserTrackingMode, animated: Bool)> {
+    var didChangeUserTrackingMode: ControlEvent<(mode: MKUserTrackingMode, animated: Bool)> {
         let source = delegate
                 .methodInvoked(#selector(MKMapViewDelegate.mapView(_:didChange:animated:)))
                 .map { a in
@@ -135,7 +135,7 @@ public extension Reactive where Base: MKMapView {
 
     // MARK: Responding to Annotation Views
 
-    public var didAddAnnotationViews: ControlEvent<[MKAnnotationView]> {
+    var didAddAnnotationViews: ControlEvent<[MKAnnotationView]> {
         let source = delegate
                 .methodInvoked(#selector(
                                (MKMapViewDelegate.mapView(_:didAdd:))!
@@ -148,7 +148,7 @@ public extension Reactive where Base: MKMapView {
         return ControlEvent(events: source)
     }
 
-    public var annotationViewCalloutAccessoryControlTapped: ControlEvent<(view: MKAnnotationView, control: UIControl)> {
+    var annotationViewCalloutAccessoryControlTapped: ControlEvent<(view: MKAnnotationView, control: UIControl)> {
         let source = delegate
                 .methodInvoked(#selector(MKMapViewDelegate.mapView(_:annotationView:calloutAccessoryControlTapped:)))
                 .map { a in
@@ -160,7 +160,7 @@ public extension Reactive where Base: MKMapView {
 
     // MARK: Selecting Annotation Views
 
-    public var didSelectAnnotationView: ControlEvent<MKAnnotationView> {
+    var didSelectAnnotationView: ControlEvent<MKAnnotationView> {
         let source = delegate
                 .methodInvoked(#selector(MKMapViewDelegate.mapView(_:didSelect:)))
                 .map { a in
@@ -169,7 +169,7 @@ public extension Reactive where Base: MKMapView {
         return ControlEvent(events: source)
     }
 
-    public var didDeselectAnnotationView: ControlEvent<MKAnnotationView> {
+    var didDeselectAnnotationView: ControlEvent<MKAnnotationView> {
         let source = delegate
                 .methodInvoked(#selector(MKMapViewDelegate.mapView(_:didDeselect:)))
                 .map { a in
@@ -178,7 +178,7 @@ public extension Reactive where Base: MKMapView {
         return ControlEvent(events: source)
     }
 
-    public var didChangeState: ControlEvent<(view: MKAnnotationView, newState: MKAnnotationView.DragState, oldState: MKAnnotationView.DragState)> {
+    var didChangeState: ControlEvent<(view: MKAnnotationView, newState: MKAnnotationView.DragState, oldState: MKAnnotationView.DragState)> {
         let source = delegate
                 .methodInvoked(#selector(MKMapViewDelegate.mapView(_:annotationView:didChange:fromOldState:)))
                 .map { a in
@@ -196,7 +196,7 @@ public extension Reactive where Base: MKMapView {
 
     // MARK: Managing the Display of Overlays
 
-    public var didAddOverlayRenderers: ControlEvent<[MKOverlayRenderer]> {
+    var didAddOverlayRenderers: ControlEvent<[MKOverlayRenderer]> {
         let source = delegate
                 .methodInvoked(#selector(
                                (MKMapViewDelegate.mapView(_:didAdd:))!
@@ -211,7 +211,7 @@ public extension Reactive where Base: MKMapView {
 
     // MARK: Binding annotation to the Map
 
-    public func annotations<S: Sequence, O: ObservableType>(_ source: O)
+    func annotations<S: Sequence, O: ObservableType>(_ source: O)
                     -> (_ transform: @escaping (S.Iterator.Element) -> MKAnnotation)
             -> Disposable where O.E == S {
 
@@ -223,7 +223,7 @@ public extension Reactive where Base: MKMapView {
         }
     }
 
-    public func annotations<O: ObservableType>(_ source: O)
+    func annotations<O: ObservableType>(_ source: O)
                     -> Disposable where O.E == [MKAnnotation] {
         return source.subscribe(AnyObserver { event in
             if case let .next(element) = event {
@@ -243,7 +243,7 @@ public extension Reactive where Base: MKMapView {
         })
     }
 
-    public func annotations<O: ObservableType>(_ source: O)
+    func annotations<O: ObservableType>(_ source: O)
                     -> Disposable where O.E: MKAnnotation {
         return source.subscribe(AnyObserver { event in
             if case let .next(element) = event {

@@ -8,9 +8,9 @@ public extension ObservableType {
     }
 }
 
-extension ObservableType {
+public extension ObservableType {
 
-    public func mapVoid() -> Observable<Void> {
+    func mapVoid() -> Observable<Void> {
         return self.map { _ in return Void() }
     }
 

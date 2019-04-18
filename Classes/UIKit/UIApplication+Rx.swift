@@ -3,7 +3,7 @@ import RxSwift
 
 public extension PrimitiveSequence where Trait == SingleTrait {
 
-    public func withStatusIndicator() -> PrimitiveSequence {
+    func withStatusIndicator() -> PrimitiveSequence {
 
         return self.do(
                 onSubscribed: {
