@@ -20,6 +20,9 @@ it, simply add the following line to your Podfile:
 pod 'MustacheRxSwift'
 ```
 
+For making full use of MustacheRxSwift follow this guide to enable Rx cababilites in other Mustache pods
+http://marginalfutility.net/2015/10/11/swift-compiler-flags/
+
 ## Author
 
 sadiq81, th@mustache.dk
