@@ -11,17 +11,14 @@
     "Tommy Sadiq Hinrichsen": "th@mustache.dk"
   },
   "source": {
-    "git": "https://github.com/mustachedk/MustacheRxSwift",
+    "git": "https://github.com/mustachedk/MustacheRxSwift.git",
     "tag": "0.1.0"
   },
   "swift_version": "5.0",
   "platforms": {
     "ios": "11.0"
   },
-  "source_files": [
-    "MustacheUIKit/Classes/**/*",
-    "MustacheUIKit/Extensions/**/*"
-  ],
+  "source_files": "MustacheRxSwift/Classes/**/*",
   "frameworks": [
     "UIKit",
     "AVFoundation",
