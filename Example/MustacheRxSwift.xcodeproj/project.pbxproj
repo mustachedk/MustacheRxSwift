@@ -46,7 +46,7 @@
 		BD59B3E462F7B7624BD2BA25 /* Pods-MustacheRxSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MustacheRxSwift_Example.debug.xcconfig"; path = "Target Support Files/Pods-MustacheRxSwift_Example/Pods-MustacheRxSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D1E475D2AA5A4399124360A5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D37D3EC76AE78156BF12192C /* Pods-MustacheRxSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MustacheRxSwift_Example.release.xcconfig"; path = "Target Support Files/Pods-MustacheRxSwift_Example/Pods-MustacheRxSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
-		D7E73A414D2BDA9F4D00F10D /* MustacheRxSwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MustacheRxSwift.podspec; path = ../MustacheRxSwift.podspec; sourceTree = "<group>"; };
+		D7E73A414D2BDA9F4D00F10D /* MustacheRxSwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MustacheRxSwift.podspec; path = ../MustacheRxSwift.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

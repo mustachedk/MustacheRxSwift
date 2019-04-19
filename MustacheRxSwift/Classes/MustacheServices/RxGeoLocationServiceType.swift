@@ -1,4 +1,3 @@
-
 import Foundation
 import UIKit
 import CoreLocation
@@ -9,7 +8,6 @@ import RxSwiftExt
 import RxCocoa
 
 public protocol RxGeoLocationServiceType: Service {
-
 
     var authorized: Observable<Bool> { get }
 
@@ -23,20 +21,20 @@ public class RxGeoLocationService: NSObject, RxGeoLocationServiceType {
 
     public lazy var location: Observable<CLLocation> = {
         return locationManager.rx.didUpdateLocations
-            .filter({ (locations: [CLLocation]) -> Bool in
-                return locations.count > 0
-            })
-            .map({ (locations: [CLLocation]) -> CLLocation in
-                return locations.first!
-            })
-            .share(replay: 1)
-            .do(onSubscribe: { [weak self] in
-                guard let weakSelf = self else { return }
-                weakSelf.changeObserverCount(1)
+                .filter({ (locations: [CLLocation]) -> Bool in
+                    return locations.count > 0
+                })
+                .map({ (locations: [CLLocation]) -> CLLocation in
+                    return locations.first!
+                })
+                .share(replay: 1)
+                .do(onSubscribe: { [weak self] in
+                    guard let weakSelf = self else { return }
+                    weakSelf.changeObserverCount(1)
                 }, onDispose: { [weak self] in
                     guard let weakSelf = self else { return }
                     weakSelf.changeObserverCount(-1)
-            })
+                })
     }()
 
     fileprivate let disposeBag = DisposeBag()
@@ -44,18 +42,20 @@ public class RxGeoLocationService: NSObject, RxGeoLocationServiceType {
     fileprivate let locationManager = CLLocationManager()
 
     required public init(services: Services) throws {
-        super.init()
+
         self.locationManager.distanceFilter = kCLDistanceFilterNone
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
 
         authorized = locationManager.rx.didChangeAuthorizationStatus.map({ (status: CLAuthorizationStatus) -> Bool in
             switch status {
-            case .authorizedWhenInUse, .authorizedAlways:
-                return true
-            default:
-                return false
+                case .authorizedWhenInUse, .authorizedAlways:
+                    return true
+                default:
+                    return false
             }
         })
+
+        super.init()
 
         self.locationManager.requestWhenInUseAuthorization()
 

@@ -1,54 +1,41 @@
-
 import Foundation
 import RxSwift
 import MustacheServices
 
 public extension NetworkServiceType {
 
-    public func send<T: Decodable>(endpoint: APIEndpoint) -> Single<T> {
+    func send<T: Decodable>(endpoint: Endpoint) -> Single<T> {
         return self.send(endpoint: endpoint, using: JSONDecoder())
     }
 
-    public func send<T: Decodable>(endpoint: APIEndpoint, using decoder: JSONDecoder) -> Single<T> {
+    func send<T: Decodable>(endpoint: Endpoint, using decoder: JSONDecoder) -> Single<T> {
 
         if let demoData = endpoint.demoData as? T { return Single<T>.just(demoData) }
 
         return Single<T>.create { [weak self] observer in
+                    guard let self = self else {
+                        observer(.error(MustacheRxSwiftError.deallocated))
+                        return Disposables.create()
+                    }
 
-            let task = self.send(endpoint:endpoint, using: decoder, completion: { (result: Result<T, Error>) in
+                    let task = self.send(endpoint: endpoint, using: decoder, completionHandler: { (result: Result<T, Error>) in
 
-                switch result {
-                    case .success(let model):
-                        observer(.success(model))
-                    case .error(let error):
-                        observer(.error(error))
+                        switch result {
+                            case .success(let model):
+                                observer(.success(model))
+                            case .failure(let error):
+                                observer(.error(error))
+                        }
+
+                    })
+
+                    return Disposables.create {
+                        task.cancel()
+                    }
                 }
-
-            })
-
-            return Disposables.create {
-                task.cancel()
-            }
-            }
-        .observeOn(MainScheduler.instance)
+                .observeOn(MainScheduler.instance)
 
     }
-}
-
-public extension DAWAServiceType {
-
-    func choices(searchText: String) -> Observable<[AutoCompleteModel]> {
-        return self.networkService.getAutoCompleteChoices(searchText: searchText).asObservable()
-    }
-
-    func address(href: String) -> Observable<AutoCompleteAddress> {
-        return self.networkService.getAddress(href: href).asObservable()
-    }
-
-    func nearest(latitude: Double, longitude: Double) -> Observable<AutoCompleteAddress> {
-        return self.networkService.getNearestAddress(latitude: latitude, longitude: longitude).asObservable()
-    }
-    
 }
 
 public extension NetworkServiceType {
@@ -69,3 +56,4 @@ public extension NetworkServiceType {
     }
 
 }
+

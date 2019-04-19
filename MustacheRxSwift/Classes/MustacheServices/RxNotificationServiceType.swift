@@ -1,4 +1,3 @@
-
 import Foundation
 import UserNotifications
 import RxSwift
@@ -12,23 +11,23 @@ public protocol RxNotificationServiceType: Service {
 
 public final class RxNotificationService: NSObject, RxNotificationServiceType {
 
-    required init(services: Services) throws {}
+    public required init(services: Services) throws {}
 
     public func registerForPushNotifications() -> Observable<Bool> {
         return Observable<Bool>.create { (observer) in
-            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
-                if let error = error {
-                    observer.onError(error)
-                } else {
-                    observer.onNext(granted)
-                    observer.onCompleted()
+                    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+                        if let error = error {
+                            observer.onError(error)
+                        } else {
+                            observer.onNext(granted)
+                            observer.onCompleted()
+                        }
+                    }
+                    return Disposables.create()
                 }
-            }
-            return Disposables.create()
-            }
-            .do(onNext: { [weak self] granted in
-                if granted { self?.getNotificationSettings() }
-            })
+                .do(onNext: { [weak self] granted in
+                    if granted { self?.getNotificationSettings() }
+                })
     }
 
     fileprivate func getNotificationSettings() {

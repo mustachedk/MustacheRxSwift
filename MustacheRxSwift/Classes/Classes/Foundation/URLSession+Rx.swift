@@ -1,9 +1,8 @@
-
 import RxSwift
 
 public extension URLSession {
 
-    public func dataTask(with request: URLRequest) -> Observable<(Data?, URLResponse?)> {
+    func dataTask(with request: URLRequest) -> Observable<(Data?, URLResponse?)> {
         return Observable.create { (observer: AnyObserver<(Data?, URLResponse?)>) in
             let task = self.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) -> Void in
                 if let error = error {

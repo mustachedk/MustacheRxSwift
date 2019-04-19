@@ -125,3 +125,8 @@ extension ObservableType {
         return scan((first, first)) { ($0.1, $1) }.skip(1)
     }
 }
+
+
+public enum MustacheRxSwiftError: Error {
+    case deallocated
+}
