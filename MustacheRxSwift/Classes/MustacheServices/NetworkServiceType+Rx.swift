@@ -38,22 +38,5 @@ public extension NetworkServiceType {
     }
 }
 
-public extension NetworkServiceType {
 
-    func getAutoCompleteChoices(searchText: String) -> Single<[AutoCompleteModel]> {
-        let endpoint = DAWAEndpoint.get(searchText: searchText)
-        return self.send(endpoint: endpoint)
-    }
-
-    func getAddress(href: String) -> Single<AutoCompleteAddress> {
-        let endpoint = DAWAEndpoint.getAddress(href: href)
-        return self.send(endpoint: endpoint)
-    }
-
-    func getNearestAddress(latitude: Double, longitude: Double) -> Single<AutoCompleteAddress> {
-        let endpoint = DAWAEndpoint.nearest(latitude: latitude, longitude: longitude)
-        return self.send(endpoint: endpoint)
-    }
-
-}
 
