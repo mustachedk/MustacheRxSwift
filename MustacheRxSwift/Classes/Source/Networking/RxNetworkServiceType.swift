@@ -12,13 +12,9 @@ public class RxNetworkService: NSObject, RxNetworkServiceType {
     fileprivate let services: Services
     fileprivate lazy var networkService: NetworkServiceType = { return try! self.services.get() }()
     fileprivate lazy var renewTokenService: RenewTokenServiceType  = { return try! self.services.get() }()
-//    fileprivate let networkService: NetworkServiceType
-//    fileprivate let renewTokenService: RenewTokenServiceType
 
     public required init(services: Services) throws {
         self.services = services
-//        self.networkService = try services.get()
-//        self.renewTokenService = try services.get()
     }
 
     public func send<T: Decodable>(endpoint: Endpoint) -> Single<T> {
