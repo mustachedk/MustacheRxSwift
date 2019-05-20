@@ -11,7 +11,7 @@ public class RxNetworkService: NSObject, RxNetworkServiceType {
 
     fileprivate let services: Services
     fileprivate lazy var networkService: NetworkServiceType = { return try! self.services.get() }()
-    fileprivate lazy var renewTokenService: RenewTokenServiceType  = { return try! self.services.get() }()
+    fileprivate lazy var renewTokenService: RenewTokenServiceType = { return try! self.services.get() }()
 
     public required init(services: Services) throws {
         self.services = services
@@ -30,7 +30,7 @@ public class RxNetworkService: NSObject, RxNetworkServiceType {
                     .catchError { error in
                         guard let networkError = error as? NetworkServiceTypeError else { throw error }
                         switch networkError {
-                            case .unSuccessful(let code, _):
+                            case .unSuccessful(_, _, let code, _):
                                 if code == 403 || code == 401 {
                                     throw RenewTokenError.unauthorized
                                 } else {
