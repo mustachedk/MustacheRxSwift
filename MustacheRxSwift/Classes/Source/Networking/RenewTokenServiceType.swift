@@ -11,7 +11,7 @@ import RxSwift
 
 public protocol RenewTokenServiceType: Service {
 
-    var token: Observable<String> { get }
+    var token: Observable<Void> { get }
 
     func trackErrors<O: ObservableConvertibleType>(for source: O) -> Observable<Void> where O.E == Error
 
@@ -19,10 +19,10 @@ public protocol RenewTokenServiceType: Service {
 
 public class RenewTokenService: NSObject, RenewTokenServiceType {
 
-    public lazy var token: Observable<String> = {
+    public lazy var token: Observable<Void> = {
         return self.relay
                 .flatMapFirst { _ in self.tokenService.updateToken() }
-                .startWith(self.credentialsService.bearer ?? "")
+                .startWith(Void())
                 .share(replay: 1)
     }()
 
@@ -60,7 +60,7 @@ public class RenewTokenService: NSObject, RenewTokenServiceType {
         return Observable.merge(token.skip(1).map { _ in }, error)
     }
 
-    private let relay = PublishSubject<String>()
+    private let relay = PublishSubject<Void>()
     private let lock = NSRecursiveLock()
 
     public func clearState() {}

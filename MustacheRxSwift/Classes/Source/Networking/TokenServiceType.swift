@@ -8,6 +8,6 @@ import RxSwift
 
 public protocol TokenServiceType: Service {
 
-    func updateToken() -> Observable<String>
+    func updateToken() -> Observable<Void>
 
 }
