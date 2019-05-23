@@ -24,6 +24,7 @@ public class RxNetworkService: NSObject, RxNetworkServiceType {
     public func send<T: Decodable>(endpoint: Endpoint, using decoder: JSONDecoder) -> Single<T> {
 
         if endpoint.authentication == .bearer {
+            var count = 3
             return Observable
                     .deferred { self.renewTokenService.token.take(1) }
                     .flatMap { _ in self.observable(endpoint: endpoint, using: decoder).asObservable() }
@@ -31,7 +32,8 @@ public class RxNetworkService: NSObject, RxNetworkServiceType {
                         guard let networkError = error as? NetworkServiceTypeError else { throw error }
                         switch networkError {
                             case .unSuccessful(_, _, let code, _):
-                                if code == 403 || code == 401 {
+                                if (code == 403 || code == 401) && count > 0 {
+                                    count -= 1
                                     throw RenewTokenError.unauthorized
                                 } else {
                                     throw error
