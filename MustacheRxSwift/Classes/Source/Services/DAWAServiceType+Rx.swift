@@ -91,4 +91,30 @@ public extension DAWAServiceType {
                 .observeOn(MainScheduler.instance)
                 .asObservable()
     }
+
+    func zip(searchText: String) -> Observable<[ZipAutoCompleteModel]> {
+        return Single<[ZipAutoCompleteModel]>.create { [weak self] observer in
+                    guard let self = self else {
+                        observer(.error(MustacheRxSwiftError.deallocated))
+                        return Disposables.create()
+                    }
+
+                    let task = self.zip(searchText: searchText, completionHandler: { (result: Result<[ZipAutoCompleteModel], Error>) in
+
+                        switch result {
+                            case .success(let models):
+                                observer(.success(models))
+                            case .failure(let error):
+                                observer(.error(error))
+                        }
+
+                    })
+
+                    return Disposables.create {
+                        task.cancel()
+                    }
+                }
+                .observeOn(MainScheduler.instance)
+                .asObservable()
+    }
 }
