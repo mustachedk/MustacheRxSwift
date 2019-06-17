@@ -117,5 +117,5 @@ public extension DAWAServiceType {
                 .observeOn(MainScheduler.instance)
                 .asObservable()
     }
-    
+
 }
