@@ -73,13 +73,17 @@ public protocol DawaViewModelType {
     var chosenAutoCompleteChoice: PublishSubject<AutoCompleteModel> { get }
 
     var autoCompleteAddress: PublishSubject<AutoCompleteAddress> { get }
+    var zipAutoComplete: PublishSubject<[ZipAutoCompleteModel]> { get }
 
     func getNearest() -> Observable<AutoCompleteAddress?>
 
 }
 
 open class DawaViewModel: NSObject, DawaViewModelType {
-
+    
+    
+    
+    public var zipAutoComplete = PublishSubject<[ZipAutoCompleteModel]>()
     public let searchText = PublishSubject<String>()
     public let cursorPosition = PublishSubject<Int>()
 
@@ -100,7 +104,7 @@ open class DawaViewModel: NSObject, DawaViewModelType {
 
         self.configureAutoComplete()
         self.configureChosenAutoCompleteChoice()
-
+        self.configureZipAutoComplete()
     }
 
     public func getNearest() -> Observable<AutoCompleteAddress?> {
@@ -148,6 +152,22 @@ open class DawaViewModel: NSObject, DawaViewModelType {
                     print(error)
                 })
                 .disposed(by: self.disposeBag)
+    }
+    
+
+    fileprivate func configureZipAutoComplete() {
+        self.searchText
+            .do(onNext: { [weak self] (searchText: String) in
+                if searchText.count <= 2 { self?.zipAutoComplete.onNext([]) }
+            })
+            .filter { (searchText: String) -> Bool in return searchText.count > 2 }
+            .throttle(1.0, scheduler: MainScheduler.instance)
+            .flatMapLatest { [weak self] (searchText: String) -> Observable<[ZipAutoCompleteModel]> in
+                guard let self = self else { return Observable<[ZipAutoCompleteModel]>.just([]) }
+                return self.dawaService.zip(searchText: searchText)
+            }
+            .bind(to: self.zipAutoComplete)
+            .disposed(by: self.disposeBag)
     }
 
 }
