@@ -87,7 +87,7 @@ open class DawaViewModel: NSObject, DawaViewModelType {
         self.chosenAutoCompleteChoice.subscribe(onNext: { [weak self] choice in
                     guard let self = self else { return }
                     switch choice.type {
-                        case .vejnavn: self.searchText.onNext(choice.forslagsTekst)
+                        case .vejnavn: self.addressSearchText.onNext(choice.forslagsTekst)
                         case .adresse, .adgangsadresse:
                             _ = self.dawaService.address(href: choice.href)
                                     .subscribe(onNext: { [weak self] address in
