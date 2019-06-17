@@ -8,65 +8,11 @@ import CoreLocation
 
 import MustacheServices
 
-/*
-
- Use together with pod "SearchTextField"
-
- Ex:
-
- class View: UIView {
-
- @IBOutlet weak var addressTextField: SearchTextField!
-
- var viewModel: DawaViewModelType!
- var autoCompleteChoices: [AutoCompleteModel] = []
- var autoCompleteAddress: AutoCompleteAddress? = nil
-
-
- func configureAddressSearch() {
-
- self.addressTextField.comparisonOptions = [.caseInsensitive]
- self.addressTextField.theme.bgColor = .white
-
- (self.addressTextField.rx.text.orEmpty <-> self.viewModel.searchText).disposed(by: self.disposeBag)
-
- self.addressTextField.itemSelectionHandler = { [weak self] (filteredResults, itemPosition) in
- guard let self = self else { return }
- guard let selected = self.autoCompleteChoices[safe: itemPosition] else { return }
-
- self.viewModel.chosenAutoCompleteChoice.onNext(selected)
- }
-
- self.viewModel.autoCompleteChoices
- .filter({ [weak self] _ -> Bool in
- guard let self = self else { return false }
- return self.addressTextField.isFirstResponder
- })
- .subscribe(onNext: { [weak self] (models: [AutoCompleteModel]) in
- guard let self = self else { return }
- self.autoCompleteChoices = models
- self.addressTextField.filterStrings(models.map { $0.forslagsTekst })
- })
- .disposed(by: self.disposeBag)
-
- self.viewModel.autoCompleteAddress
- .subscribe(onNext: { [weak self] (address: AutoCompleteAddress) in
- guard let self = self else { return }
- self.autoCompleteAddress = address
- self.addressTextField.text = address.readableAddress
- self.addressTextField.hideResultsList()
- self.addressTextField.resignFirstResponder()
- })
- .disposed(by: self.disposeBag)
- }
-
- }
-
- */
-
 public protocol DawaViewModelType {
 
-    var searchText: PublishSubject<String> { get }
+    var addressSearchText: PublishSubject<String> { get }
+    var zipSearchText: PublishSubject<String> { get }
+
     var cursorPosition: PublishSubject<Int> { get }
 
     var autoCompleteChoices: PublishSubject<[AutoCompleteModel]> { get }
@@ -81,16 +27,17 @@ public protocol DawaViewModelType {
 
 open class DawaViewModel: NSObject, DawaViewModelType {
     
-    
-    
-    public var zipAutoComplete = PublishSubject<[ZipAutoCompleteModel]>()
-    public let searchText = PublishSubject<String>()
+    public let addressSearchText = PublishSubject<String>()
+    public let zipSearchText = PublishSubject<String>()
+
     public let cursorPosition = PublishSubject<Int>()
 
     public let autoCompleteChoices = PublishSubject<[AutoCompleteModel]>()
     public let chosenAutoCompleteChoice = PublishSubject<AutoCompleteModel>()
 
     public let autoCompleteAddress = PublishSubject<AutoCompleteAddress>()
+
+    public var zipAutoComplete = PublishSubject<[ZipAutoCompleteModel]>()
 
     fileprivate let disposeBag = DisposeBag()
 
@@ -121,7 +68,7 @@ open class DawaViewModel: NSObject, DawaViewModelType {
 
     fileprivate func configureAutoComplete() {
 
-        self.searchText
+        self.addressSearchText
                 .do(onNext: { [weak self] (searchText: String) in
                     if searchText.count <= 2 { self?.autoCompleteChoices.onNext([]) }
                 })
@@ -156,7 +103,7 @@ open class DawaViewModel: NSObject, DawaViewModelType {
     
 
     fileprivate func configureZipAutoComplete() {
-        self.searchText
+        self.zipSearchText
             .do(onNext: { [weak self] (searchText: String) in
                 if searchText.count <= 2 { self?.zipAutoComplete.onNext([]) }
             })
