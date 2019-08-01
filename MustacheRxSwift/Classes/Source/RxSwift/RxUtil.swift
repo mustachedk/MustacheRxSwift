@@ -119,14 +119,6 @@ public func <-><T: Equatable>(left: ControlProperty<T>, right: PublishSubject<T>
     return Disposables.create(leftToRight, rightToLeft)
 }
 
-extension ObservableType {
-
-    public func withPrevious(startWith first: E) -> Observable<(E, E)> {
-        return scan((first, first)) { ($0.1, $1) }.skip(1)
-    }
-}
-
-
 public enum MustacheRxSwiftError: Error {
     case deallocated
 }
