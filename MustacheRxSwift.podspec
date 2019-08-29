@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'MustacheRxSwift'
-    s.version          = '0.2.4'
+    s.version          = '0.3.0'
     s.summary          = 'Helper methods used at Mustache when creating new apps.'
     s.homepage         = 'https://github.com/mustachedk/MustacheRxSwift'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -12,12 +12,11 @@ Pod::Spec.new do |s|
 
     s.source_files = 'MustacheRxSwift/Classes/**/*.swift'
 
-    s.frameworks = 'UIKit', 'AVFoundation', 'CoreLocation', 'MapKit'
+    s.frameworks = 'UIKit', 'AVFoundation', 'CoreLocation', 'MapKit', 'UserNotifications'
 
     s.dependency 'RxSwift'
     s.dependency 'RxSwiftExt'
     s.dependency 'RxViewController'
     s.dependency 'MustacheServices'
-    s.dependency 'MustacheUIKit'
 
 end
