@@ -3,12 +3,12 @@ import Foundation
 import UserNotifications
 import RxSwift
 
-public extension UNUserNotificationCenter {
+extension Reactive where Base: UNUserNotificationCenter {
 
     func requestAuthorization(options: UNAuthorizationOptions = []) -> Observable<Bool> {
         return Observable.create { (observer: AnyObserver<Bool>) in
             DispatchQueue.main.async {
-                self.requestAuthorization(options: options, completionHandler: { (_ granted: Bool, _ error: Error?) -> Void in
+                self.base.requestAuthorization(options: options, completionHandler: { (_ granted: Bool, _ error: Error?) -> Void in
                     if let error = error {
                         observer.onError(error)
                     } else {
@@ -26,7 +26,7 @@ public extension UNUserNotificationCenter {
     func getNotificationSettings() -> Observable<UNNotificationSettings> {
         return Observable.create { (observer: AnyObserver<UNNotificationSettings>) in
             DispatchQueue.main.async {
-                self.getNotificationSettings(completionHandler: { (settings: UNNotificationSettings) -> Void in
+                self.base.getNotificationSettings(completionHandler: { (settings: UNNotificationSettings) -> Void in
                     observer.onNext(settings)
                     observer.onCompleted()
                 })
