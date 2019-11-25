@@ -1,5 +1,6 @@
 import RxSwift
 import RxCocoa
+import Foundation
 
 public func castOrThrow<T>(_ resultType: T.Type, _ object: Any) throws -> T {
     guard let returnValue = object as? T else {

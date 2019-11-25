@@ -1,4 +1,5 @@
 import RxSwift
+import Foundation
 
 public extension URLSession {
 
