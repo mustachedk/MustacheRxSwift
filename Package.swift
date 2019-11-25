@@ -11,7 +11,7 @@ let package = Package(
   ],
   dependencies: [
     .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "5.0.0")),
-    .package(url: "https://github.com/RxSwiftCommunity/RxSwiftExt.git", .upToNextMajor(from: "5.0.0")),
+    .package(url: "https://github.com/RxSwiftCommunity/RxSwiftExt.git", .upToNextMajor(from: "1.0.0")),
     .package(url: "https://github.com/devxoul/RxViewController.git", .upToNextMajor(from: "1.0.0")),
     .package(url: "https://github.com/mustachedk/MustacheServices", .upToNextMajor(from: "1.0.0")),
     .package(url: "https://github.com/mustachedk/MustacheUIKit", .upToNextMajor(from: "1.0.0")),
