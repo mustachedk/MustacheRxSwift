@@ -2,6 +2,7 @@
 import Foundation
 import UserNotifications
 import RxSwift
+import UIKit
 
 extension Reactive where Base: UNUserNotificationCenter {
 

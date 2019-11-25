@@ -2,6 +2,7 @@ import Foundation
 import UserNotifications
 import RxSwift
 import MustacheServices
+import UIKit
 
 public protocol RxNotificationServiceType: Service {
 
@@ -39,4 +40,3 @@ public final class RxNotificationService: NSObject, RxNotificationServiceType {
 
     public func clearState() {}
 }
-
