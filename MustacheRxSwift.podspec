@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'MustacheRxSwift'
-    s.version          = '1.0.3'
+    s.version          = '1.0.4'
     s.summary          = 'Helper methods used at Mustache when creating new apps.'
     s.homepage         = 'https://github.com/mustachedk/MustacheRxSwift'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -19,5 +19,7 @@ Pod::Spec.new do |s|
     s.dependency 'RxViewController'
     s.dependency 'MustacheServices'
     s.dependency 'MustacheUIKit'
+
+    s.static_framework = true
 
 end
