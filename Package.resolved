@@ -1,0 +1,88 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
+        "state": {
+          "branch": null,
+          "revision": "2f9d171f17869768f6dbec1d039b851e2503af35",
+          "version": "5.12.0"
+        }
+      },
+      {
+        "package": "MustacheFoundation",
+        "repositoryURL": "https://github.com/mustachedk/MustacheFoundation",
+        "state": {
+          "branch": null,
+          "revision": "cd877121983864b5190f1304c82dfef4b5a393e3",
+          "version": "1.0.3"
+        }
+      },
+      {
+        "package": "MustacheServices",
+        "repositoryURL": "https://github.com/mustachedk/MustacheServices",
+        "state": {
+          "branch": null,
+          "revision": "bc1988c5df7e5ffa1c074f03d03635cfb4dbf3e3",
+          "version": "2.0.3"
+        }
+      },
+      {
+        "package": "MustacheUIKit",
+        "repositoryURL": "https://github.com/mustachedk/MustacheUIKit",
+        "state": {
+          "branch": null,
+          "revision": "b184325fded70b07d0dd77667edbacae118341ef",
+          "version": "1.0.2"
+        }
+      },
+      {
+        "package": "Resolver",
+        "repositoryURL": "https://github.com/hmlongco/Resolver.git",
+        "state": {
+          "branch": null,
+          "revision": "e95a4a174adac202b75f5f6188e7dbd5d21ce180",
+          "version": "1.1.1"
+        }
+      },
+      {
+        "package": "RxExpect",
+        "repositoryURL": "https://github.com/devxoul/RxExpect.git",
+        "state": {
+          "branch": null,
+          "revision": "c3a3bb3d46ee831582c6619ecc48cda1cdbff890",
+          "version": "2.0.0"
+        }
+      },
+      {
+        "package": "RxSwift",
+        "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "b3e888b4972d9bc76495dd74d30a8c7fad4b9395",
+          "version": "5.0.1"
+        }
+      },
+      {
+        "package": "RxSwiftExt",
+        "repositoryURL": "https://github.com/RxSwiftCommunity/RxSwiftExt.git",
+        "state": {
+          "branch": null,
+          "revision": "9620cd55a58c1cf3370375140c45379c40049f55",
+          "version": "5.2.0"
+        }
+      },
+      {
+        "package": "RxViewController",
+        "repositoryURL": "https://github.com/devxoul/RxViewController.git",
+        "state": {
+          "branch": null,
+          "revision": "2974fc02742497ee26ba3622ced199818d580444",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

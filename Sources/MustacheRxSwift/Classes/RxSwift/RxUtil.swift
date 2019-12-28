@@ -24,40 +24,28 @@ public func castOptionalOrThrow<T>(_ resultType: T.Type, _ object: Any) throws -
 
 infix operator <->
 
-public func <-><T: Equatable>(variable: Variable<T>, property: ControlProperty<T>) -> Disposable {
-    let variableToProperty = variable.asObservable()
+public func <-><T: Equatable>(BehaviorRelay: BehaviorRelay<T>, property: ControlProperty<T>) -> Disposable {
+    let BehaviorRelayToProperty = BehaviorRelay.asObservable()
             .distinctUntilChanged()
             .bind(to: property)
 
-    let propertyToVariable = property
+    let propertyToBehaviorRelay = property
             .distinctUntilChanged()
-            .bind(to: variable)
+            .bind(to: BehaviorRelay)
 
-    return Disposables.create(variableToProperty, propertyToVariable)
+    return Disposables.create(BehaviorRelayToProperty, propertyToBehaviorRelay)
 }
 
-public func <-><T: Equatable>(property: ControlProperty<T>, variable: Variable<T>) -> Disposable {
-    let variableToProperty = variable.asObservable()
+public func <-><T: Equatable>(property: ControlProperty<T>, BehaviorRelay: BehaviorRelay<T>) -> Disposable {
+    let BehaviorRelayToProperty = BehaviorRelay.asObservable()
             .distinctUntilChanged()
             .bind(to: property)
 
-    let propertyToVariable = property
+    let propertyToBehaviorRelay = property
             .distinctUntilChanged()
-            .bind(to: variable)
+            .bind(to: BehaviorRelay)
 
-    return Disposables.create(variableToProperty, propertyToVariable)
-}
-
-public func <-><T: Equatable>(relay: BehaviorRelay<T>, property: ControlProperty<T>) -> Disposable {
-    let relayToProperty = relay.asObservable()
-            .distinctUntilChanged()
-            .bind(to: property)
-
-    let propertyToVariable = property
-            .distinctUntilChanged()
-            .bind(to: relay)
-
-    return Disposables.create(relayToProperty, propertyToVariable)
+    return Disposables.create(BehaviorRelayToProperty, propertyToBehaviorRelay)
 }
 
 public func <-><T: Equatable>(left: BehaviorRelay<T>, right: BehaviorRelay<T>) -> Disposable {
@@ -66,30 +54,6 @@ public func <-><T: Equatable>(left: BehaviorRelay<T>, right: BehaviorRelay<T>) -
             .bind(to: right)
 
     let rightToLeft = right
-            .distinctUntilChanged()
-            .bind(to: left)
-
-    return Disposables.create(leftToRight, rightToLeft)
-}
-
-public func <-><T: Equatable>(property: ControlProperty<T>, relay: BehaviorRelay<T>) -> Disposable {
-    let relayToProperty = relay.asObservable()
-            .distinctUntilChanged()
-            .bind(to: property)
-
-    let propertyToVariable = property
-            .distinctUntilChanged()
-            .bind(to: relay)
-
-    return Disposables.create(relayToProperty, propertyToVariable)
-}
-
-public func <-><T: Equatable>(left: Variable<T>, right: Variable<T>) -> Disposable {
-    let leftToRight = left.asObservable()
-            .distinctUntilChanged()
-            .bind(to: right)
-
-    let rightToLeft = right.asObservable()
             .distinctUntilChanged()
             .bind(to: left)
 

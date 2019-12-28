@@ -8,16 +8,17 @@
 import Foundation
 import MustacheServices
 import RxSwift
+import Resolver
 
-public protocol RenewTokenServiceType: Service {
+public protocol RenewTokenServiceType {
 
     var token: Observable<Void> { get }
 
-    func trackErrors<O: ObservableConvertibleType>(for source: O) -> Observable<Void> where O.E == Error
+    func trackErrors<O: ObservableConvertibleType>(for source: O) -> Observable<Void> where O.Element == Error
 
 }
 
-public class RenewTokenService: NSObject, RenewTokenServiceType {
+public class RenewTokenService: RenewTokenServiceType {
 
     public lazy var token: Observable<Void> = {
         return self.relay
@@ -26,13 +27,11 @@ public class RenewTokenService: NSObject, RenewTokenServiceType {
                 .share(replay: 1)
     }()
 
-    fileprivate let tokenService: TokenServiceType
-    fileprivate let credentialsService: CredentialsServiceType
-
-    public required init(services: Services) throws {
-        self.tokenService = try services.get()
-        self.credentialsService = try services.get()
-    }
+    @Injected
+    fileprivate var tokenService: TokenServiceType
+    
+    @Injected
+    fileprivate var credentialsService: CredentialsServiceType
 
     /**
      Monitors the source for `.unauthorized` error events and passes all other errors on. When an `.unauthorized` error is seen, `self` will get a new token and emit a signal that it's safe to retry the request.
@@ -40,7 +39,7 @@ public class RenewTokenService: NSObject, RenewTokenServiceType {
      - parameter source: An `Observable` (or like type) that emits errors.
      - returns: A trigger that will emit when it's safe to retry the request.
      */
-    public func trackErrors<O: ObservableConvertibleType>(for source: O) -> Observable<Void> where O.E == Error {
+    public func trackErrors<O: ObservableConvertibleType>(for source: O) -> Observable<Void> where O.Element == Error {
         let lock = self.lock
         let relay = self.relay
         let error = source
@@ -66,7 +65,7 @@ public class RenewTokenService: NSObject, RenewTokenServiceType {
     public func clearState() {}
 }
 
-public extension ObservableConvertibleType where E == Error {
+public extension ObservableConvertibleType where Element == Error {
 
     func renewToken(with service: RenewTokenServiceType) -> Observable<Void> {
         return service.trackErrors(for: self)

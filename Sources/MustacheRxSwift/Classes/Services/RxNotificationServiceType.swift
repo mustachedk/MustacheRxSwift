@@ -4,15 +4,13 @@ import RxSwift
 import MustacheServices
 import UIKit
 
-public protocol RxNotificationServiceType: Service {
+public protocol RxNotificationServiceType {
 
     func registerForPushNotifications() -> Observable<Bool>
 
 }
 
-public final class RxNotificationService: NSObject, RxNotificationServiceType {
-
-    public required init(services: Services) throws {}
+public final class RxNotificationService: RxNotificationServiceType {
 
     public func registerForPushNotifications() -> Observable<Bool> {
         return Observable<Bool>.create { (observer) in
@@ -38,5 +36,4 @@ public final class RxNotificationService: NSObject, RxNotificationServiceType {
         }
     }
 
-    public func clearState() {}
 }

@@ -7,7 +7,7 @@ import RxSwift
 import RxSwiftExt
 import RxCocoa
 
-public protocol RxGeoLocationServiceType: Service {
+public protocol RxGeoLocationServiceType {
 
     var authorized: Observable<Bool> { get }
 
@@ -15,7 +15,7 @@ public protocol RxGeoLocationServiceType: Service {
 
 }
 
-public class RxGeoLocationService: NSObject, RxGeoLocationServiceType {
+public class RxGeoLocationService: RxGeoLocationServiceType {
 
     public var authorized: Observable<Bool>
 
@@ -41,7 +41,7 @@ public class RxGeoLocationService: NSObject, RxGeoLocationServiceType {
 
     fileprivate let locationManager = CLLocationManager()
 
-    required public init(services: Services) throws {
+    public init(){
 
         self.locationManager.distanceFilter = kCLDistanceFilterNone
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -54,8 +54,6 @@ public class RxGeoLocationService: NSObject, RxGeoLocationServiceType {
                     return false
             }
         })
-
-        super.init()
 
         self.locationManager.requestWhenInUseAuthorization()
 
@@ -75,5 +73,4 @@ public class RxGeoLocationService: NSObject, RxGeoLocationServiceType {
         }
     }
 
-    public func clearState() {}
 }

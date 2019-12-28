@@ -1,21 +1,20 @@
 import Foundation
 import RxSwift
 import MustacheServices
+import Resolver
 
-public protocol RxNetworkServiceType: Service {
+public protocol RxNetworkServiceType {
     func send<T: Decodable>(endpoint: Endpoint) -> Single<T>
     func send<T: Decodable>(endpoint: Endpoint, using decoder: JSONDecoder) -> Single<T>
 }
 
 public class RxNetworkService: NSObject, RxNetworkServiceType {
 
-    fileprivate let services: Services
-    fileprivate lazy var networkService: NetworkServiceType = { return try! self.services.get() }()
-    fileprivate lazy var renewTokenService: RenewTokenServiceType = { return try! self.services.get() }()
-
-    public required init(services: Services) throws {
-        self.services = services
-    }
+    @Injected
+    fileprivate var networkService: NetworkServiceType
+    
+    @Injected
+    fileprivate var renewTokenService: RenewTokenServiceType
 
     public func send<T: Decodable>(endpoint: Endpoint) -> Single<T> {
         return self.send(endpoint: endpoint, using: JSONDecoder())
@@ -77,8 +76,6 @@ public class RxNetworkService: NSObject, RxNetworkServiceType {
                 }
                 .observeOn(MainScheduler.instance)
     }
-
-    public func clearState() {}
 }
 
 

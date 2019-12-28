@@ -212,7 +212,7 @@ public extension Reactive where Base: MKMapView {
 
     func annotations<S: Sequence, O: ObservableType>(_ source: O)
                     -> (_ transform: @escaping (S.Iterator.Element) -> MKAnnotation)
-            -> Disposable where O.E == S {
+            -> Disposable where O.Element == S {
 
         return { factory in
             source.map { elements -> [MKAnnotation] in
@@ -223,7 +223,7 @@ public extension Reactive where Base: MKMapView {
     }
 
     func annotations<O: ObservableType>(_ source: O)
-                    -> Disposable where O.E == [MKAnnotation] {
+                    -> Disposable where O.Element== [MKAnnotation] {
         return source.subscribe(AnyObserver { event in
             if case let .next(element) = event {
 
@@ -243,7 +243,7 @@ public extension Reactive where Base: MKMapView {
     }
 
     func annotations<O: ObservableType>(_ source: O)
-                    -> Disposable where O.E: MKAnnotation {
+                    -> Disposable where O.Element: MKAnnotation {
         return source.subscribe(AnyObserver { event in
             if case let .next(element) = event {
                 if !self.base.annotations.map({ $0.hash }).contains(element.hash) { self.base.addAnnotation(element) }

@@ -1,12 +1,10 @@
 import Foundation
-
 import RxSwift
 import RxSwiftExt
 import RxCocoa
-
 import CoreLocation
-
 import MustacheServices
+import Resolver
 
 public protocol DawaViewModelType {
 
@@ -15,54 +13,53 @@ public protocol DawaViewModelType {
 
     var cursorPosition: PublishSubject<Int> { get }
 
-    var autoCompleteChoices: PublishSubject<[AutoCompleteModel]> { get }
-    var chosenAutoCompleteChoice: PublishSubject<AutoCompleteModel> { get }
+    var autoCompleteChoices: PublishSubject<[DAWAAddressSuggestion]> { get }
+    var chosenAutoCompleteChoice: PublishSubject<DAWAAddressSuggestion> { get }
 
-    var autoCompleteAddress: PublishSubject<AutoCompleteAddress> { get }
-    var zipAutoComplete: PublishSubject<[ZipAutoCompleteModel]> { get }
+    var autoCompleteAddress: PublishSubject<DAWAAddress> { get }
+    var zipAutoComplete: PublishSubject<[DAWAZipSuggestion]> { get }
 
-    func getNearest() -> Observable<AutoCompleteAddress?>
+    func getNearest() -> Observable<DAWAAddress?>
 
 }
 
-open class DawaViewModel: NSObject, DawaViewModelType {
+open class DawaViewModel: DawaViewModelType {
     
     public let addressSearchText = PublishSubject<String>()
     public let zipSearchText = PublishSubject<String>()
 
     public let cursorPosition = PublishSubject<Int>()
 
-    public let autoCompleteChoices = PublishSubject<[AutoCompleteModel]>()
-    public let chosenAutoCompleteChoice = PublishSubject<AutoCompleteModel>()
+    public let autoCompleteChoices = PublishSubject<[DAWAAddressSuggestion]>()
+    public let chosenAutoCompleteChoice = PublishSubject<DAWAAddressSuggestion>()
 
-    public let autoCompleteAddress = PublishSubject<AutoCompleteAddress>()
+    public let autoCompleteAddress = PublishSubject<DAWAAddress>()
 
-    public var zipAutoComplete = PublishSubject<[ZipAutoCompleteModel]>()
+    public var zipAutoComplete = PublishSubject<[DAWAZipSuggestion]>()
 
     fileprivate let disposeBag = DisposeBag()
 
-    fileprivate let dawaService: DAWAServiceType
-    fileprivate let locationService: RxGeoLocationServiceType
+    @Injected
+    fileprivate var dawaService: DAWAServiceType
+    
+    @Injected
+    fileprivate var locationService: RxGeoLocationServiceType
 
-    public init(services: ServicesType) throws {
-        self.dawaService = try services.get()
-        self.locationService = try services.get()
-        super.init()
-
+    public init() {
         self.configureAutoComplete()
         self.configureChosenAutoCompleteChoice()
         self.configureZipAutoComplete()
     }
 
-    public func getNearest() -> Observable<AutoCompleteAddress?> {
+    public func getNearest() -> Observable<DAWAAddress?> {
         return self.locationService.location
                 .take(1)
-                .timeout(3, scheduler: MainScheduler.asyncInstance)
+                .timeout(.seconds(3), scheduler: MainScheduler.asyncInstance)
                 .map { return $0 as CLLocation? }
                 .catchErrorJustReturn(nil)
-                .flatMapLatest { [weak self] location -> Observable<AutoCompleteAddress?> in
-                    guard let self = self, let location = location else { return Observable<AutoCompleteAddress?>.just(nil) }
-                    return self.dawaService.nearest(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude).map { return $0 as AutoCompleteAddress? }
+                .flatMapLatest { [weak self] location -> Observable<DAWAAddress?> in
+                    guard let self = self, let location = location else { return Observable<DAWAAddress?>.just(nil) }
+                    return self.dawaService.nearest(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude).map { return $0 as DAWAAddress? }
                 }
     }
 
@@ -73,9 +70,9 @@ open class DawaViewModel: NSObject, DawaViewModelType {
                     if searchText.count <= 2 { self?.autoCompleteChoices.onNext([]) }
                 })
                 .filter { (searchText: String) -> Bool in return searchText.count > 2 }
-                .throttle(1.0, scheduler: MainScheduler.instance)
-                .flatMapLatest { [weak self] (searchText: String) -> Observable<[AutoCompleteModel]> in
-                    guard let self = self else { return Observable<[AutoCompleteModel]>.just([]) }
+                .throttle(.seconds(1), scheduler: MainScheduler.instance)
+                .flatMapLatest { [weak self] (searchText: String) -> Observable<[DAWAAddressSuggestion]> in
+                    guard let self = self else { return Observable<[DAWAAddressSuggestion]>.just([]) }
                     return self.dawaService.choices(searchText: searchText)
                 }
                 .bind(to: self.autoCompleteChoices)
@@ -108,9 +105,9 @@ open class DawaViewModel: NSObject, DawaViewModelType {
                 if searchText.count <= 2 { self?.zipAutoComplete.onNext([]) }
             })
             .filter { (searchText: String) -> Bool in return searchText.count > 2 }
-            .throttle(1.0, scheduler: MainScheduler.instance)
-            .flatMapLatest { [weak self] (searchText: String) -> Observable<[ZipAutoCompleteModel]> in
-                guard let self = self else { return Observable<[ZipAutoCompleteModel]>.just([]) }
+            .throttle(.seconds(1), scheduler: MainScheduler.instance)
+            .flatMapLatest { [weak self] (searchText: String) -> Observable<[DAWAZipSuggestion]> in
+                guard let self = self else { return Observable<[DAWAZipSuggestion]>.just([]) }
                 return self.dawaService.zip(searchText: searchText)
             }
             .bind(to: self.zipAutoComplete)

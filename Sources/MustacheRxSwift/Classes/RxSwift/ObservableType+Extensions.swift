@@ -2,7 +2,7 @@ import RxSwift
 
 public extension ObservableType {
 
-    func mapFilter<Input>(_ isIncluded: @escaping (Input) throws -> Bool) -> Observable<Array<Input>> where E: Collection, E.Element == Input {
+    func mapFilter<Input>(_ isIncluded: @escaping (Input) throws -> Bool) -> Observable<Array<Input>> where Element: Collection, Element.Element == Input {
         return map { try $0.filter(isIncluded) }
     }
 
@@ -14,11 +14,11 @@ public extension ObservableType {
 
 public extension ObservableType {
 
-    func withPrevious(startWith first: E) -> Observable<(E, E)> {
+    func withPrevious(startWith first: Element) -> Observable<(Element, Element)> {
         return self.withPrevious(startWith: first, skip: 0)
     }
 
-    func withPrevious(startWith first: E, skip: Int) -> Observable<(E, E)> {
+    func withPrevious(startWith first: Element, skip: Int) -> Observable<(Element, Element)> {
         return scan((first, first)) { ($0.1, $1) }.skip(skip)
     }
 }

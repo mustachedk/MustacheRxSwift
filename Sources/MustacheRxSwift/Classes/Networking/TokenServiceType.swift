@@ -6,7 +6,7 @@ import Foundation
 import MustacheServices
 import RxSwift
 
-public protocol TokenServiceType: Service {
+public protocol TokenServiceType {
 
     func updateToken() -> Observable<Void>
 
