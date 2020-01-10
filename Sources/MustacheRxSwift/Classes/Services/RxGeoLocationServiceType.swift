@@ -9,7 +9,7 @@ import RxCocoa
 
 public protocol RxGeoLocationServiceType {
 
-    var authorized: Observable<Bool> { get }
+    var authorized: Observable<Bool>! { get }
 
     var location: Observable<CLLocation> { get }
 
@@ -17,7 +17,7 @@ public protocol RxGeoLocationServiceType {
 
 public class RxGeoLocationService: RxGeoLocationServiceType {
 
-    public var authorized: Observable<Bool>
+    public var authorized: Observable<Bool>!
 
     public lazy var location: Observable<CLLocation> = {
         return locationManager.rx.didUpdateLocations
@@ -47,7 +47,7 @@ public class RxGeoLocationService: RxGeoLocationServiceType {
         self.locationManager.distanceFilter = kCLDistanceFilterNone
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
 
-        authorized = locationManager.rx.didChangeAuthorizationStatus.startWith(CLLocationManager.authorizationStatus()).map( { [weak self] (status: CLAuthorizationStatus) -> Bool in
+        self.authorized = self.locationManager.rx.didChangeAuthorizationStatus.startWith(CLLocationManager.authorizationStatus()).map( { [weak self] (status: CLAuthorizationStatus) -> Bool in
             switch status {
                 case .authorizedWhenInUse, .authorizedAlways:
                     guard let self = self else { return true }
