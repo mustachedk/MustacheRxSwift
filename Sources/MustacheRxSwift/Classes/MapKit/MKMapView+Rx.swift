@@ -223,7 +223,7 @@ public extension Reactive where Base: MKMapView {
     }
 
     func annotations<O: ObservableType>(_ source: O)
-                    -> Disposable where O.Element== [MKAnnotation] {
+                    -> Disposable where O.Element == [MKAnnotation] {
         return source.subscribe(AnyObserver { event in
             if case let .next(element) = event {
 
