@@ -50,7 +50,7 @@ public class RxGeoLocationService: RxGeoLocationServiceType {
         authorized = locationManager.rx.didChangeAuthorizationStatus.startWith(CLLocationManager.authorizationStatus()).map( { [weak self] (status: CLAuthorizationStatus) -> Bool in
             switch status {
                 case .authorizedWhenInUse, .authorizedAlways:
-                    guard let self = self else { return }
+                    guard let self = self else { return true }
                     self.locationManager.startUpdatingLocation()
                     return true
                 default:
