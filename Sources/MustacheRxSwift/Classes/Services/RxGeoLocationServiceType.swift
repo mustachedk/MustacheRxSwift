@@ -29,11 +29,11 @@ public class RxGeoLocationService: RxGeoLocationServiceType {
                 })
                 .share(replay: 1)
                 .do(onSubscribe: { [weak self] in
-                    guard let weakSelf = self else { return }
-                    weakSelf.changeObserverCount(1)
+                    guard let self = self else { return }
+                    self.locationManager.requestWhenInUseAuthorization()
                 }, onDispose: { [weak self] in
-                    guard let weakSelf = self else { return }
-                    weakSelf.changeObserverCount(-1)
+                    guard let self = self else { return }
+                    self.locationManager.stopUpdatingLocation()
                 })
     }()
 
@@ -46,7 +46,7 @@ public class RxGeoLocationService: RxGeoLocationServiceType {
         self.locationManager.distanceFilter = kCLDistanceFilterNone
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
 
-        authorized = locationManager.rx.didChangeAuthorizationStatus.map({ (status: CLAuthorizationStatus) -> Bool in
+        authorized = locationManager.rx.didChangeAuthorizationStatus.startWith(CLLocationManager.authorizationStatus()).map( { (status: CLAuthorizationStatus) -> Bool in
             switch status {
                 case .authorizedWhenInUse, .authorizedAlways:
                     return true
@@ -54,23 +54,6 @@ public class RxGeoLocationService: RxGeoLocationServiceType {
                     return false
             }
         })
-
-        self.locationManager.requestWhenInUseAuthorization()
-
+    
     }
-
-    fileprivate var observers: Int = 0
-
-    fileprivate func changeObserverCount(_ value: Int) {
-        self.observers += value
-        if self.observers < 0 {
-            fatalError()
-        } else if self.observers == 0 {
-            self.locationManager.stopUpdatingLocation()
-        } else {
-            self.locationManager.startUpdatingLocation()
-
-        }
-    }
-
 }
