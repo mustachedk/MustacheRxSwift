@@ -11,7 +11,7 @@ import RxSwift
 
 public extension DAWAServiceType {
 
-    func choices(searchText: String) -> Observable<[AutoCompleteModel]> {
+    func choices(searchText: String, type: AutoCompleteType) -> Observable<[AutoCompleteModel]> {
 
         return Single<[AutoCompleteModel]>.create { [weak self] observer in
                     guard let self = self else {
@@ -19,7 +19,7 @@ public extension DAWAServiceType {
                         return Disposables.create()
                     }
 
-                    let task = self.choices(searchText: searchText, completionHandler: { (result: Result<[AutoCompleteModel], Error>) in
+            let task = self.choices(searchText: searchText, type: type, completionHandler: { (result: Result<[AutoCompleteModel], Error>) in
 
                         switch result {
                             case .success(let model):
@@ -39,15 +39,15 @@ public extension DAWAServiceType {
 
     }
 
-    func address(href: String) -> Observable<AutoCompleteAddress> {
+    func address(href: String, type: AutoCompleteType) -> Observable<DAWAAddressProtol> {
 
-        return Single<AutoCompleteAddress>.create { [weak self] observer in
+        return Single<DAWAAddressProtol>.create { [weak self] observer in
                     guard let self = self else {
                         observer(.error(MustacheRxSwiftError.deallocated))
                         return Disposables.create()
                     }
 
-                    let task = self.address(href: href, completionHandler: { (result: Result<AutoCompleteAddress, Error>) in
+                    let task = self.address(href: href, type: type, completionHandler: { (result: Result<DAWAAddressProtol, Error>) in
 
                         switch result {
                             case .success(let model):
@@ -66,14 +66,14 @@ public extension DAWAServiceType {
                 .asObservable()
     }
 
-    func nearest(latitude: Double, longitude: Double) -> Observable<AutoCompleteAddress> {
-        return Single<AutoCompleteAddress>.create { [weak self] observer in
+    func nearest(latitude: Double, longitude: Double, type: AutoCompleteType) -> Observable<DAWAAddressProtol> {
+        return Single<DAWAAddressProtol>.create { [weak self] observer in
                     guard let self = self else {
                         observer(.error(MustacheRxSwiftError.deallocated))
                         return Disposables.create()
                     }
 
-                    let task = self.nearest(latitude: latitude, longitude: longitude, completionHandler: { (result: Result<AutoCompleteAddress, Error>) in
+                    let task = self.nearest(latitude: latitude, longitude: longitude, type: type, completionHandler: { (result: Result<DAWAAddressProtol, Error>) in
 
                         switch result {
                             case .success(let model):
