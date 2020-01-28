@@ -11,6 +11,8 @@ public protocol RxGeoLocationServiceType {
 
     var authorized: Observable<Bool>! { get }
 
+    var status: Observable<CLAuthorizationStatus>! { get }
+
     var location: Observable<CLLocation> { get }
 
 }
@@ -18,6 +20,8 @@ public protocol RxGeoLocationServiceType {
 public class RxGeoLocationService: RxGeoLocationServiceType {
 
     public var authorized: Observable<Bool>!
+
+    public var status: Observable<CLAuthorizationStatus>!
 
     public lazy var location: Observable<CLLocation> = {
         return locationManager.rx.didUpdateLocations
@@ -57,6 +61,8 @@ public class RxGeoLocationService: RxGeoLocationServiceType {
                     return false
             }
         })
+
+        self.status = self.locationManager.rx.didChangeAuthorizationStatus.startWith(CLLocationManager.authorizationStatus())
 
     }
 }
