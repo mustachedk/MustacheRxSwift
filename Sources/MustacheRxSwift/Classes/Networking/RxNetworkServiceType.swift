@@ -12,9 +12,8 @@ public class RxNetworkService: NSObject, RxNetworkServiceType {
 
     @Injected
     fileprivate var networkService: NetworkServiceType
-    
-    @Injected
-    fileprivate var renewTokenService: RenewTokenServiceType
+
+    fileprivate var renewTokenService: RenewTokenServiceType? = Resolver.optional()
 
     public func send<T: Decodable>(endpoint: Endpoint) -> Single<T> {
         return self.send(endpoint: endpoint, using: JSONDecoder())
@@ -22,10 +21,10 @@ public class RxNetworkService: NSObject, RxNetworkServiceType {
 
     public func send<T: Decodable>(endpoint: Endpoint, using decoder: JSONDecoder) -> Single<T> {
 
-        if endpoint.authentication == .bearer {
+        if let renewService = self.renewTokenService, endpoint.authentication == .bearer {
             var count = 3
             return Observable
-                    .deferred { self.renewTokenService.token.take(1) }
+                    .deferred { renewService.token.take(1) }
                     .flatMap { _ in self.observable(endpoint: endpoint, using: decoder).asObservable() }
                     .catchError { error in
                         guard let networkError = error as? NetworkServiceTypeError else { throw error }
@@ -40,7 +39,7 @@ public class RxNetworkService: NSObject, RxNetworkServiceType {
                             default: throw error
                         }
                     }
-                    .retryWhen { $0.renewToken(with: self.renewTokenService) }
+                    .retryWhen { $0.renewToken(with: renewService) }
                     .asSingle()
 
         } else {
