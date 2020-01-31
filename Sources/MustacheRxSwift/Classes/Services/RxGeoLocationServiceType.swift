@@ -46,7 +46,7 @@ public class RxGeoLocationService: RxGeoLocationServiceType {
 
     fileprivate let locationManager = CLLocationManager()
 
-    public init(){
+    public init() {
 
         self.locationManager.distanceFilter = kCLDistanceFilterNone
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation

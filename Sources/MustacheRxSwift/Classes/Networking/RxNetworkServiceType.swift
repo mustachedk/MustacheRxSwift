@@ -15,6 +15,10 @@ public class RxNetworkService: NSObject, RxNetworkServiceType {
 
     fileprivate var renewTokenService: RenewTokenServiceType? = Resolver.optional()
 
+    public override init() {
+        super.init()
+    }
+
     public func send<T: Decodable>(endpoint: Endpoint) -> Single<T> {
         return self.send(endpoint: endpoint, using: JSONDecoder())
     }
