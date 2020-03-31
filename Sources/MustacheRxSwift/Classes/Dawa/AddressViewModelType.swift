@@ -7,7 +7,7 @@ import MustacheFoundation
 import CoreLocation
 import Resolver
 
-protocol AddressViewModelType {
+public protocol AddressViewModelType {
     
     var searchText: PublishSubject<String?> { get }
     var autoCompleteChoices: PublishSubject<[AutoCompleteContainer]> { get }
