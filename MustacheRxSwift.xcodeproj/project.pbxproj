@@ -291,7 +291,7 @@
 		OBJ_687 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* RxCLLocationManagerDelegateProxy.swift */; };
 		OBJ_688 /* RxMKLocalSearchCompleterDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* RxMKLocalSearchCompleterDelegateProxy.swift */; };
 		OBJ_689 /* RxAddressServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* RxAddressServiceType.swift */; };
-		OBJ_690 /* DawaViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* DawaViewModelType.swift */; };
+		OBJ_690 /* AddressViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* AddressViewModelType.swift */; };
 		OBJ_691 /* URLSession+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* URLSession+Rx.swift */; };
 		OBJ_692 /* UserDefaults+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* UserDefaults+Rx.swift */; };
 		OBJ_693 /* MKLocalSearch+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* MKLocalSearch+Rx.swift */; };
@@ -803,7 +803,7 @@
 		OBJ_187 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		OBJ_188 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		OBJ_189 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
-		OBJ_19 /* DawaViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DawaViewModelType.swift; sourceTree = "<group>"; };
+		OBJ_19 /* AddressViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModelType.swift; sourceTree = "<group>"; };
 		OBJ_190 /* InlineConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineConfigurable.swift; sourceTree = "<group>"; };
 		OBJ_191 /* JSONDecoder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extensions.swift"; sourceTree = "<group>"; };
 		OBJ_192 /* Locale+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Extensions.swift"; sourceTree = "<group>"; };
@@ -1499,7 +1499,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_18 /* RxAddressServiceType.swift */,
-				OBJ_19 /* DawaViewModelType.swift */,
+				OBJ_19 /* AddressViewModelType.swift */,
 			);
 			path = Dawa;
 			sourceTree = "<group>";
@@ -2219,7 +2219,7 @@
 			path = .build/checkouts/MustacheUIKit/Sources/MustacheUIKit;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -2231,7 +2231,6 @@
 				OBJ_581 /* LICENSE */,
 				OBJ_582 /* README.md */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_50 /* Classes */ = {
@@ -2829,7 +2828,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_567 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -3208,7 +3207,7 @@
 				OBJ_687 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				OBJ_688 /* RxMKLocalSearchCompleterDelegateProxy.swift in Sources */,
 				OBJ_689 /* RxAddressServiceType.swift in Sources */,
-				OBJ_690 /* DawaViewModelType.swift in Sources */,
+				OBJ_690 /* AddressViewModelType.swift in Sources */,
 				OBJ_691 /* URLSession+Rx.swift in Sources */,
 				OBJ_692 /* UserDefaults+Rx.swift in Sources */,
 				OBJ_693 /* MKLocalSearch+Rx.swift in Sources */,
