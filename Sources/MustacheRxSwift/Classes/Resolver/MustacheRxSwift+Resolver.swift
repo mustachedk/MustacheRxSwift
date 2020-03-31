@@ -35,5 +35,6 @@ extension Resolver {
     
     public static func registerRxDawaServices() {
         Resolver.register(RxAddressServiceType.self) { RxAddressService() }
+        Resolver.register(AddressViewModelType.self) { AddressViewModel() }
     }
 }
