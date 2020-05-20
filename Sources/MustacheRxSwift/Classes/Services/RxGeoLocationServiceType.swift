@@ -34,7 +34,6 @@ public class RxGeoLocationService: RxGeoLocationServiceType {
                 .share(replay: 1)
                 .do(onSubscribe: { [weak self] in
                     guard let self = self else { return }
-                    self.locationManager.requestWhenInUseAuthorization()
                     self.locationManager.startUpdatingLocation()
                 }, onDispose: { [weak self] in
                     guard let self = self else { return }
