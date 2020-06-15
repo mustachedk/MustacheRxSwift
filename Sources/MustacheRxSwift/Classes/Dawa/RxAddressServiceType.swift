@@ -20,7 +20,7 @@ public protocol RxAddressServiceType {
     
 }
 
-class RxAddressService: NSObject, RxAddressServiceType {
+public class RxAddressService: NSObject, RxAddressServiceType {
     
     @Injected
     fileprivate var networkService: RxNetworkServiceType
