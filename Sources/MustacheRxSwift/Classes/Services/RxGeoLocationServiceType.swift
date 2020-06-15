@@ -9,7 +9,9 @@ import RxCocoa
 
 public protocol RxGeoLocationServiceType {
 
-    var authorized: Observable<Bool> { get }
+    var authorized: Observable<Bool>! { get }
+
+    var status: Observable<CLAuthorizationStatus>! { get }
 
     var location: Observable<CLLocation> { get }
 
@@ -17,7 +19,9 @@ public protocol RxGeoLocationServiceType {
 
 public class RxGeoLocationService: RxGeoLocationServiceType {
 
-    public var authorized: Observable<Bool>
+    public var authorized: Observable<Bool>!
+
+    public var status: Observable<CLAuthorizationStatus>!
 
     public lazy var location: Observable<CLLocation> = {
         return locationManager.rx.didUpdateLocations
@@ -30,7 +34,7 @@ public class RxGeoLocationService: RxGeoLocationServiceType {
                 .share(replay: 1)
                 .do(onSubscribe: { [weak self] in
                     guard let self = self else { return }
-                    self.locationManager.requestWhenInUseAuthorization()
+                    self.locationManager.startUpdatingLocation()
                 }, onDispose: { [weak self] in
                     guard let self = self else { return }
                     self.locationManager.stopUpdatingLocation()
@@ -41,19 +45,23 @@ public class RxGeoLocationService: RxGeoLocationServiceType {
 
     fileprivate let locationManager = CLLocationManager()
 
-    public init(){
+    public init() {
 
         self.locationManager.distanceFilter = kCLDistanceFilterNone
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
 
-        authorized = locationManager.rx.didChangeAuthorizationStatus.startWith(CLLocationManager.authorizationStatus()).map( { (status: CLAuthorizationStatus) -> Bool in
+        self.authorized = self.locationManager.rx.didChangeAuthorizationStatus.startWith(CLLocationManager.authorizationStatus()).map( { [weak self] (status: CLAuthorizationStatus) -> Bool in
             switch status {
                 case .authorizedWhenInUse, .authorizedAlways:
+                    guard let self = self else { return true }
+                    self.locationManager.startUpdatingLocation()
                     return true
                 default:
                     return false
             }
         })
-    
+
+        self.status = self.locationManager.rx.didChangeAuthorizationStatus.startWith(CLLocationManager.authorizationStatus())
+
     }
 }

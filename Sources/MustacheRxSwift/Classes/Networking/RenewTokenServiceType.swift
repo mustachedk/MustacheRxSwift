@@ -33,6 +33,8 @@ public class RenewTokenService: RenewTokenServiceType {
     @Injected
     fileprivate var credentialsService: CredentialsServiceType
 
+    public init() {}
+
     /**
      Monitors the source for `.unauthorized` error events and passes all other errors on. When an `.unauthorized` error is seen, `self` will get a new token and emit a signal that it's safe to retry the request.
 

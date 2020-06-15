@@ -12,6 +12,8 @@ public protocol RxNotificationServiceType {
 
 public final class RxNotificationService: RxNotificationServiceType {
 
+    public init() {}
+
     public func registerForPushNotifications() -> Observable<Bool> {
         return Observable<Bool>.create { (observer) in
                     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
