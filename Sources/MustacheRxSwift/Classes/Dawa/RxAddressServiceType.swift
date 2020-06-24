@@ -11,35 +11,35 @@ import RxSwift
 import Resolver
 
 public protocol RxAddressServiceType {
-    
+
     func choices(searchText: String) -> Observable<[AutoCompleteContainer]>
-    
+
     func find(addresse: String) -> Observable<[AutoCompleteAdresseContainer]>
-    
+
     func zipCodes(searchText: String) -> Observable<[AutoCompletePostnummerContainer]>
-    
+
 }
 
 public class RxAddressService: NSObject, RxAddressServiceType {
-    
+
     @Injected
     fileprivate var networkService: RxNetworkServiceType
-    
-    func choices(searchText: String) -> Observable<[AutoCompleteContainer]> {
+
+    public func choices(searchText: String) -> Observable<[AutoCompleteContainer]> {
         let endpoint = AddressEndpoint.get(searchText: searchText)
         return self.networkService.send(endpoint: endpoint).asObservable()
     }
-    
-    func find(addresse: String) -> Observable<[AutoCompleteAdresseContainer]> {
+
+    public func find(addresse: String) -> Observable<[AutoCompleteAdresseContainer]> {
         let endpoint = AddressEndpoint.find(searchText: addresse)
         return self.networkService.send(endpoint: endpoint).asObservable()
     }
-    
-    func zipCodes(searchText: String) -> Observable<[AutoCompletePostnummerContainer]> {
+
+    public func zipCodes(searchText: String) -> Observable<[AutoCompletePostnummerContainer]> {
         let endpoint = AddressEndpoint.zip(searchText: searchText)
         return self.networkService.send(endpoint: endpoint).asObservable()
     }
-    
+
     func clearState() {}
-    
+
 }
