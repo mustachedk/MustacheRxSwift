@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/mustachedk/MustacheFoundation",
         "state": {
           "branch": null,
-          "revision": "cd877121983864b5190f1304c82dfef4b5a393e3",
-          "version": "1.0.3"
+          "revision": "c71e8e960166bace8c9e8a23836fae50d352eede",
+          "version": "1.2.1"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/mustachedk/MustacheServices",
         "state": {
           "branch": null,
-          "revision": "a7c82650ed0ce2c46bb83798b5f91e1976fa18c6",
-          "version": "3.0.0"
+          "revision": "595d0ce3f3a6dc6a994bd3458024852ed2dc20ba",
+          "version": "3.2.2"
         }
       },
       {
