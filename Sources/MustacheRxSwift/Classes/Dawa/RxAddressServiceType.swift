@@ -18,7 +18,7 @@ public protocol RxAddressServiceType {
 
     func zipCodes(searchText: String) -> Observable<[AutoCompletePostnummerContainer]>
 
-    func nearest(latitude: Double, longitude: Double) -> Observable<[AdgangsAdresse]>
+    func nearest(latitude: Double, longitude: Double) -> Observable<AdgangsAdresse>
 
 }
 
@@ -42,7 +42,7 @@ public class RxAddressService: NSObject, RxAddressServiceType {
         return self.networkService.send(endpoint: endpoint).asObservable()
     }
 
-    public func nearest(latitude: Double, longitude: Double) -> Observable<[AdgangsAdresse]> {
+    public func nearest(latitude: Double, longitude: Double) -> Observable<AdgangsAdresse> {
         let endpoint = AddressEndpoint.nearest(latitude: latitude, longitude: longitude)
         return self.networkService.send(endpoint: endpoint).asObservable()
     }
