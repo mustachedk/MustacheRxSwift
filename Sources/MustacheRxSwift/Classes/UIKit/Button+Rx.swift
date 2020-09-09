@@ -16,7 +16,7 @@ extension Reactive where Base: Button {
     }
 
 
-    var isHighlighted: Observable<Bool> {
+    public var isHighlighted: Observable<Bool> {
 
         let anyObservable = self.base.rx.methodInvoked(#selector(setter: self.base.isHighlighted))
 
@@ -30,7 +30,7 @@ extension Reactive where Base: Button {
     }
 }
 
-extension Observable {
+public extension Observable {
 
     func bind(button: Button) -> Observable {
         return self.do(onSubscribe: { [weak button] in
