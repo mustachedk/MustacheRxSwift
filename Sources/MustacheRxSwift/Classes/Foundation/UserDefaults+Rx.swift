@@ -16,7 +16,7 @@ public extension UserDefaults {
         return NotificationCenter.default.rx.notification(name).map { [keyPath]_ -> T? in
             guard let data = self.value(forKey: keyPath) as? Data else { return nil }
             let decoder = JSONDecoder()
-            let loaded = try? decoder.decode(T.self, from: data)
+            let loaded = try? decoder.decode([T].self, from: data)
             return loaded
         }
     }
