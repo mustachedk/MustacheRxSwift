@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/mustachedk/MustacheFoundation",
         "state": {
           "branch": null,
-          "revision": "c71e8e960166bace8c9e8a23836fae50d352eede",
-          "version": "1.2.1"
+          "revision": "202b2321f6c6a6f80630a3fa4b2dec81f258f01a",
+          "version": "2.0.0"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/mustachedk/MustacheServices",
         "state": {
           "branch": null,
-          "revision": "595d0ce3f3a6dc6a994bd3458024852ed2dc20ba",
-          "version": "3.2.2"
+          "revision": "b24ea0d44c85705fab51da95633c37767458e3e4",
+          "version": "5.0.0"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/mustachedk/MustacheUIKit",
         "state": {
           "branch": null,
-          "revision": "46eb807ed264754fc67b4f2d8d4ff5bd1261fe89",
-          "version": "1.0.4"
+          "revision": "0e20e7734db217bc54fb2d98ed7dddde5212af72",
+          "version": "2.0.0"
         }
       },
       {
