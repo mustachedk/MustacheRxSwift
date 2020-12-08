@@ -1,4 +1,3 @@
-
 import Foundation
 import UserNotifications
 import RxSwift
@@ -7,17 +6,17 @@ import UIKit
 extension Reactive where Base: UNUserNotificationCenter {
 
     public var isAuthorized: Observable<Bool> {
-         return UIApplication.shared.rx.applicationDidBecomeActive
-             .flatMap { [base = self.base] (notification: Notification) -> Observable<Bool> in
-                 Observable.create { observer in
-                     base.getNotificationSettings(completionHandler: { (settings: UNNotificationSettings) in
-                         guard settings.authorizationStatus == .authorized else { observer.onNext(false); return; }
-                         observer.onNext(true)
-                     })
-                     return Disposables.create()
-                 }
-             }
-   }
+        return UIApplication.shared.rx.applicationDidBecomeActive
+                .flatMap { [base = self.base] _ -> Observable<Bool> in
+            return Observable<Bool>.create { observer in
+                base.getNotificationSettings(completionHandler: { (settings: UNNotificationSettings) in
+                    guard settings.authorizationStatus == .authorized else { observer.onNext(false); return; }
+                    observer.onNext(true)
+                })
+                return Disposables.create()
+            }
+        }
+    }
 
     public func requestAuthorization(options: UNAuthorizationOptions = []) -> Observable<Bool> {
         return Observable.create { (observer: AnyObserver<Bool>) in
