@@ -7,14 +7,15 @@ extension Reactive where Base: UNUserNotificationCenter {
 
     public var isAuthorized: Observable<Bool> {
         return UIApplication.shared.rx.applicationDidBecomeActive
+                .startWith(())
                 .flatMap { [base = self.base] _ -> Observable<Bool> in
-            return Observable<Bool>.create { observer in
-                base.getNotificationSettings(completionHandler: { (settings: UNNotificationSettings) in
-                    guard settings.authorizationStatus == .authorized else { observer.onNext(false); return; }
-                    observer.onNext(true)
-                })
-                return Disposables.create()
-            }
+                    return Observable<Bool>.create { observer in
+                        base.getNotificationSettings(completionHandler: { (settings: UNNotificationSettings) in
+                            guard settings.authorizationStatus == .authorized else { observer.onNext(false); return; }
+                            observer.onNext(true)
+                        })
+                    return Disposables.create()
+                }
         }
     }
 
