@@ -61,7 +61,7 @@ public class RxNetworkService: NSObject, RxNetworkServiceType {
 
         return Single<T>.create { [weak self] observer in
                     guard let self = self else {
-                        observer(.error(MustacheRxSwiftError.deallocated))
+                        observer(.failure(MustacheRxSwiftError.deallocated))
                         return Disposables.create()
                     }
 
@@ -71,7 +71,7 @@ public class RxNetworkService: NSObject, RxNetworkServiceType {
                             case .success(let model):
                                 observer(.success(model))
                             case .failure(let error):
-                                observer(.error(error))
+                                observer(.failure(error))
                         }
 
                     })
