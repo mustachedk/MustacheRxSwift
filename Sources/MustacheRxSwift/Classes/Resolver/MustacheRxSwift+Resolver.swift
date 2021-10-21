@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Tommy Sadiq Hinrichsen on 28/12/2019.
 //
@@ -10,10 +10,10 @@ import MustacheServices
 import Resolver
 
 extension Resolver {
-    
+
     public static func registerMustacheRxServices() {
         self.registerMustacheServices()
-        
+
         self.registerRxNetworkServices()
         self.registerRxGeoLocationServices()
         self.registerRxNotificationServices()
@@ -21,7 +21,7 @@ extension Resolver {
     }
 
     public static func registerRxNetworkServices() {
-        Resolver.register(RenewTokenServiceType.self) { RenewTokenService() }.scope(Resolver.application)
+        Resolver.register(RenewTokenServiceType.self) { RenewTokenService() }.scope(.application)
         Resolver.register(RxNetworkServiceType.self) { RxNetworkService() }
     }
 
@@ -32,7 +32,7 @@ extension Resolver {
     public static func registerRxNotificationServices() {
         Resolver.register(RxNotificationServiceType.self) { RxNotificationService() }
     }
-    
+
     public static func registerRxDawaServices() {
         Resolver.register(RxAddressServiceType.self) { RxAddressService() }
         Resolver.register(AddressViewModelType.self) { AddressViewModel() }
