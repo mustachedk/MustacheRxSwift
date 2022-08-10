@@ -30,7 +30,7 @@ public class RxNetworkService: NSObject, RxNetworkServiceType {
             return Observable
                     .deferred { renewService.token.take(1) }
                     .flatMap { _ in self.observable(endpoint: endpoint, using: decoder).asObservable() }
-                    .catchError { error in
+                    .catch { error in
                         guard let networkError = error as? NetworkServiceTypeError else { throw error }
                         switch networkError {
                             case .accessTokenExpired:
@@ -46,7 +46,7 @@ public class RxNetworkService: NSObject, RxNetworkServiceType {
                             default: throw error
                         }
                     }
-                    .retryWhen { $0.renewToken(with: renewService) }
+                    .retry { $0.renewToken(with: renewService) }
                     .asSingle()
 
         } else {
@@ -80,6 +80,6 @@ public class RxNetworkService: NSObject, RxNetworkServiceType {
                         task.cancel()
                     }
                 }
-                .observeOn(MainScheduler.instance)
+        .observe(on: MainScheduler.instance)
     }
 }
