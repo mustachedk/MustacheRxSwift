@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
         "state": {
           "branch": null,
-          "revision": "9f1a5e8e6afcd3c4150300d0c64b8593fcd5b163",
-          "version": "5.13.2"
+          "revision": "1a0c2df04b31ed7aa318354f3583faea24f006fc",
+          "version": "5.15.8"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/mustachedk/MustacheServices",
         "state": {
           "branch": null,
-          "revision": "eccf3355227652d063e568a4188f9effcb2765a7",
-          "version": "6.2.0"
+          "revision": "f4c6e0d8a8d5eef5fa3a33c30644a47cd3ef0863",
+          "version": "6.2.4"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/mustachedk/MustacheUIKit",
         "state": {
           "branch": null,
-          "revision": "19fdb4d151e60d15009d83e94d60a09e6036707d",
-          "version": "4.0.4"
+          "revision": "87ed50c41ac260d8e93332a3432e9ae2b0a691b3",
+          "version": "4.0.5"
         }
       },
       {
